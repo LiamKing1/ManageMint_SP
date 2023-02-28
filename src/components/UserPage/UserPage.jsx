@@ -8,7 +8,17 @@ function UserPage() {
   return (
     <div className="container">
       <h2>Welcome, {user.username}!</h2>
+      <img></img>
       <p>Your ID is: {user.id}</p>
+
+      <h1> View Jobs </h1>
+
+      <h1> Create Job </h1>
+
+      <h1> Create Safety Advisory </h1>
+
+      <h1> View OT Requests </h1>
+
       <LogOutButton className="btn" />
     </div>
   );
