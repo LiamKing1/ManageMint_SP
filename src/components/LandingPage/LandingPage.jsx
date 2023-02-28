@@ -20,35 +20,26 @@ function LandingPage() {
       <div className="grid">
         <div className="grid-col grid-col_8">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
-            id felis metus. Vestibulum et pulvinar tortor. Morbi pharetra lacus
-            ut ex molestie blandit. Etiam et turpis sit amet risus mollis
-            interdum. Suspendisse et justo vitae metus bibendum fringilla sed
-            sed justo. Aliquam sollicitudin dapibus lectus, vitae consequat odio
-            elementum eget. Praesent efficitur eros vitae nunc interdum, eu
-            interdum justo facilisis. Sed pulvinar nulla ac dignissim efficitur.
-            Quisque eget eros metus. Vestibulum bibendum fringilla nibh a
-            luctus. Duis a sapien metus.
+            The place where managing crews, contracts and another 'C' word that
+            would make a complete and catchy statement, are all managed with ease.
           </p>
-
           <p>
-            Praesent consectetur orci dui, id elementum eros facilisis id. Sed
-            id dolor in augue porttitor faucibus eget sit amet ante. Nunc
-            consectetur placerat pharetra. Aenean gravida ex ut erat commodo, ut
-            finibus metus facilisis. Nullam eget lectus non urna rhoncus
-            accumsan quis id massa. Curabitur sit amet dolor nisl. Proin
-            euismod, augue at condimentum rhoncus, massa lorem semper lacus, sed
-            lobortis augue mi vel felis. Duis ultrices sapien at est convallis
-            congue.
-          </p>
+            An application designed with effective communication of crews in mind. Making
+            ManageMint an easy on-stop-shop. As we're growing into the world's leading providers
+            of staffing services, we're always striving to improve our products and how our clients and
+            customers are able to interact with them.
 
-          <p>
-            Fusce porta diam ac tortor elementum, ut imperdiet metus volutpat.
-            Suspendisse posuere dapibus maximus. Aliquam vitae felis libero. In
-            vehicula sapien at semper ultrices. Vivamus sed feugiat libero. Sed
-            sagittis neque id diam euismod, ut egestas felis ultricies. Nullam
-            non fermentum mauris. Sed in enim ac turpis faucibus pretium in sit
-            amet nisi.
+            While keeping track of all things business can be difficult, we've created a one-of-a-kind
+            application that is set to change the way ManageMint is viewed throughout the world. We currently
+            have a full-stack program that allows management to create and maintain better
+            job and staff organization. Giving managers access to CRUD new jobs, providing necessary job
+            details essential for crews to do their best work.
+
+
+            Also giving access to project staff, who have created accounts, access to more detailed
+            information about job scopes that will prove to better prepare them for the workload ahead
+            and allowing them to also keep track of their hard earned labor hours for pension credits
+            and proper payouts on checkstubs.
           </p>
         </div>
         <div className="grid-col grid-col_4">

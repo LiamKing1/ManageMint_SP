@@ -17,8 +17,6 @@ router.get('/', (req, res) => {
 });
 
 
-
-
 router.post('/', (req, res) => {
  // POST route code here
  const newJobInput = req.body;
