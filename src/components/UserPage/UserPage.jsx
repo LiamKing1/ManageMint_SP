@@ -15,6 +15,14 @@ function UserPage() {
   const createJobButton = () => {
     history.push('/createjob');
   };
+  
+  const advisorybButton = () => {
+    history.push('/safetyadvisory');
+  };
+  
+  const viewOtButton = () => {
+    history.push('/overtime');
+  };
 
   return (
     <div className="container">
@@ -29,8 +37,10 @@ function UserPage() {
       <button text="submit" className="create_job" onClick={() => createJobButton()}> View Jobs </button>
 
       <h1> Create Safety Advisory </h1>
+      <button text="submit" className="create_advisory" onClick={() => advisorybButton()}> View Jobs </button>
 
       <h1> View OT Requests </h1>
+      <button text="submit" className="view_ot" onClick={() => viewOtButton()}> View Jobs </button>
 
       {/* <LogOutButton className="btn" /> */}
     </div>

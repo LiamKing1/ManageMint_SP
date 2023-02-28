@@ -119,6 +119,14 @@ function App() {
           <Route exact path="/createjob">
             <CreateJobPage />
           </Route>
+          {/* STRETCH GOALS BELOW */}
+          {/* <Route exact path="/safetyadvisory">
+            <SafetyAdvisory />
+          </Route>
+
+          <Route exact path="/overtime">
+            <ViewOt />
+          </Route> */}
 
           {/* If none of the other routes matched, we will show a 404. */}
           <Route>
