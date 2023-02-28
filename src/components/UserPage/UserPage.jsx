@@ -26,7 +26,7 @@ function UserPage() {
       <button text="submit" className="view_jobs" onClick={() => viewJobsButton()}> View Jobs </button>
 
       <h1> Create Job </h1>
-      <button> Create Job </button>
+      <button text="submit" className="create_job" onClick={() => createJobButton()}> View Jobs </button>
 
       <h1> Create Safety Advisory </h1>
 
