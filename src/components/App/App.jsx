@@ -19,6 +19,8 @@ import InfoPage from '../InfoPage/InfoPage';
 import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
+import ViewJobsPage from '../ViewJobs/ViewJobsPage';
+import CreateJobPage from '../CreateJob/CreateJobPage';
 
 import './App.css';
 
@@ -108,6 +110,14 @@ function App() {
               // Otherwise, show the Landing page
               <LandingPage />
             }
+          </Route>
+
+          <Route exact path="/viewjobs">
+            <ViewJobsPage />
+          </Route>
+
+          <Route exact path="/createjob">
+            <CreateJobPage />
           </Route>
 
           {/* If none of the other routes matched, we will show a 404. */}

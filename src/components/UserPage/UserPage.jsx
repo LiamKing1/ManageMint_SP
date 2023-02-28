@@ -1,10 +1,21 @@
 import React from 'react';
 import LogOutButton from '../LogOutButton/LogOutButton';
 import {useSelector} from 'react-redux';
+import { useHistory } from 'react-router-dom';
 
 function UserPage() {
   // this component doesn't do much to start, just renders some user reducer info to the DOM
   const user = useSelector((store) => store.user);
+  const history = useHistory();
+
+  const viewJobsButton = () => {
+    history.push('/viewjobs');
+  };
+
+  const createJobButton = () => {
+    history.push('/createjob');
+  };
+
   return (
     <div className="container">
       <h2>Welcome, {user.username}!</h2>
@@ -12,14 +23,16 @@ function UserPage() {
       <p>Your ID is: {user.id}</p>
 
       <h1> View Jobs </h1>
+      <button text="submit" className="view_jobs" onClick={() => viewJobsButton()}> View Jobs </button>
 
       <h1> Create Job </h1>
+      <button> Create Job </button>
 
       <h1> Create Safety Advisory </h1>
 
       <h1> View OT Requests </h1>
 
-      <LogOutButton className="btn" />
+      {/* <LogOutButton className="btn" /> */}
     </div>
   );
 }
