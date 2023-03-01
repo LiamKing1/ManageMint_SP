@@ -1,6 +1,6 @@
 import React from 'react';
 import LogOutButton from '../LogOutButton/LogOutButton';
-import {useSelector} from 'react-redux';
+import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
 function UserPage() {
@@ -15,11 +15,11 @@ function UserPage() {
   const createJobButton = () => {
     history.push('/createjob');
   };
-  
+
   const advisorybButton = () => {
     history.push('/safetyadvisory');
   };
-  
+
   const viewOtButton = () => {
     history.push('/overtime');
   };

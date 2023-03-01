@@ -112,13 +112,13 @@ function App() {
             }
           </Route>
 
-          <Route exact path="/viewjobs">
+          <ProtectedRoute exact path="/viewjobs">
             <ViewJobsPage />
-          </Route>
+          </ProtectedRoute>
 
-          <Route exact path="/createjob">
+          <ProtectedRoute exact path="/createjob">
             <CreateJobPage />
-          </Route>
+          </ProtectedRoute>
           {/* STRETCH GOALS BELOW */}
           {/* <Route exact path="/safetyadvisory">
             <SafetyAdvisory />

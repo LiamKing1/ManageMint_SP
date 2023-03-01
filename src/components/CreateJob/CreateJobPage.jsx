@@ -7,7 +7,7 @@ function CreateJobPage() {
 
     // const [userId, newUserId] = useState([]);
     // const [newJobName, setNewJobName] = useState([]);
-    // const [newJonNumber, setNewJobNumber] = useState([]);
+    // const [newJobNumber, setNewJobNumber] = useState([]);
     // const [newJobType, setNewJobType] = useState([]);
     // const [newStartDate, setNewStartDate] = useState([]);
     // const [newStartTime, setNewStartTime] = useState([]);
