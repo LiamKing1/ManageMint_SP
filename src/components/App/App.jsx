@@ -21,6 +21,7 @@ import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 import ViewJobsPage from '../ViewJobs/ViewJobsPage';
 import CreateJobPage from '../CreateJob/CreateJobPage';
+import SubmitPage from '../JobSubmittedPage/JobSubmitted'
 
 import './App.css';
 
@@ -112,12 +113,16 @@ function App() {
             }
           </Route>
 
-          <Route exact path="/viewjobs">
+          <ProtectedRoute exact path="/viewjobs">
             <ViewJobsPage />
-          </Route>
+          </ProtectedRoute>
 
           <ProtectedRoute exact path="/createjob">
             <CreateJobPage />
+          </ProtectedRoute>
+
+          <ProtectedRoute exact path="/jobsubmitted">
+            <SubmitPage />
           </ProtectedRoute>
           {/* STRETCH GOALS BELOW */}
           {/* <Route exact path="/safetyadvisory">
