@@ -32,3 +32,6 @@ VALUES ('MikeSmithmanson', '$mith123');
 
 INSERT INTO "user" ("username", "password")
 VALUES ('LiamAllen', 'LiamK1234');
+
+
+VALUES ('Dantheman', 'Danny123');

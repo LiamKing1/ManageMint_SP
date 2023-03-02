@@ -112,9 +112,9 @@ function App() {
             }
           </Route>
 
-          <ProtectedRoute exact path="/viewjobs">
+          <Route exact path="/viewjobs">
             <ViewJobsPage />
-          </ProtectedRoute>
+          </Route>
 
           <ProtectedRoute exact path="/createjob">
             <CreateJobPage />

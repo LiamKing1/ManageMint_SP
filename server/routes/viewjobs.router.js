@@ -5,7 +5,7 @@ const router = express.Router();
 
 router.get('/', (req, res) => {
  // GET route code here
- const queryText = 'SELECT * FROM "Job";';
+ const queryText = 'SELECT * FROM "Job"';
  pool.query(queryText)
    .then((result) => {
      console.log('In my GET router', result);
@@ -17,19 +17,20 @@ router.get('/', (req, res) => {
 });
 
 
-// router.post('/', (req, res) => {
-//  // POST route code here
-//  const newJobInput = req.body;
-//  const queryText = `INSERT INTO "Job" ("user_id", "jobname", "jobnum", "jobtype", "start_date", "start_time", "duration", "contactnum", "contactname", "laborer", "supervisor", "notes")
-//  VALUES ('$1', '$2', '$3', '$4', '$5', '$6', '$7', '$8', '$9', '$10', '$11', '$12');`;
-//  pool.query(queryText, [newJobInput.user_id, newJobInput.jobname, newJobInput.jobnum, newJobInput.jobtype, newJobInput.start_date, newJobInput.start_time, newJobInput.duration, newJobInput.contactnum, newJobInput.contactname, newJobInput.laborer, newJobInput.supervisor, newJobInput.notes])
-//    .then(() => {
-//      console.log('In my POST router');
-//    }).catch((error) => {
-//      alert('There is an error in your POST router request', error);
-//      res.sendStatus(500);
-//    })
-// });
+router.post('/', (req, res) => {
+ // POST route code here
+ console.log('In POST REQUEST', req.body);
+ const newJobInput = req.body;
+ const queryText = `INSERT INTO "Job" ("user_id", "jobname", "jobnum", "jobtype", "start_date", "start_time", "duration", "contactnum", "contactname", "laborer", "supervisor", "notes")
+ VALUES ('$1', '$2', '$3', '$4', '$5', '$6', '$7', '$8', '$9', '$10', '$11', '$12');`;
+ pool.query(queryText, [newJobInput.user_id, newJobInput.jobname, newJobInput.jobnum, newJobInput.jobtype, newJobInput.start_date, newJobInput.start_time, newJobInput.duration, newJobInput.contactnum, newJobInput.contactname, newJobInput.laborer, newJobInput.supervisor, newJobInput.notes])
+   .then((result) => {
+     console.log('In my POST router', result.rows);
+   }).catch((error) => {
+     alert('There is an error in your POST router request', error);
+     res.sendStatus(500);
+   })
+});
 
 
 // router.put('/:id', (req, res) => {

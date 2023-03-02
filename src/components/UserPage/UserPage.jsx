@@ -34,13 +34,13 @@ function UserPage() {
       <button text="submit" className="view_jobs" onClick={() => viewJobsButton()}> View Jobs </button>
 
       <h1> Create Job </h1>
-      <button text="submit" className="create_job" onClick={() => createJobButton()}> View Jobs </button>
+      <button text="submit" className="create_job" onClick={() => createJobButton()}> Create Jobs </button>
 
       <h1> Create Safety Advisory </h1>
-      <button text="submit" className="create_advisory" onClick={() => advisorybButton()}> View Jobs </button>
+      <button text="submit" className="create_advisory" onClick={() => advisorybButton()}> Create Advisory </button>
 
       <h1> View OT Requests </h1>
-      <button text="submit" className="view_ot" onClick={() => viewOtButton()}> View Jobs </button>
+      <button text="submit" className="view_ot" onClick={() => viewOtButton()}> View OT Requests </button>
 
       {/* <LogOutButton className="btn" /> */}
     </div>
