@@ -22,6 +22,8 @@ import RegisterPage from '../RegisterPage/RegisterPage';
 import ViewJobsPage from '../ViewJobs/ViewJobsPage';
 import CreateJobPage from '../CreateJob/CreateJobPage';
 import SubmitPage from '../JobSubmittedPage/JobSubmitted'
+import DeleteJob from '../DeleteJob/DeleteJobPage';
+import EditJob from '../EditJob/EditJobPage';
 
 import './App.css';
 
@@ -124,6 +126,15 @@ function App() {
           <ProtectedRoute exact path="/jobsubmitted">
             <SubmitPage />
           </ProtectedRoute>
+
+          <ProtectedRoute exact path="/deletejob">
+            <DeleteJob />
+          </ProtectedRoute>
+
+          <ProtectedRoute exact path="/editjob">
+            <EditJob />
+          </ProtectedRoute>
+          
           {/* STRETCH GOALS BELOW */}
           {/* <Route exact path="/safetyadvisory">
             <SafetyAdvisory />

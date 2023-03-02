@@ -20,11 +20,18 @@ function ViewJobsPage() {
     //     }
     // };
 
-    const editButton = () => {};
+    const editButton = () => {
+        history.push('/editjob');
+        console.log('More code needed to take user to the PUT request for edits, it might not need this history.push.');
+    };
 
-    const deleteButton = () => {};
+    const deleteButton = () => {
+        history.push('/deletejob');
+    };
 
-    const jobCompleteButton = () => {};
+    const jobCompleteButton = () => {
+        console.log('The goal is to created a way to drop completed jobs down to the previous jobs section');
+    };
 
     const backButton = () => {
         history.push('/user');
