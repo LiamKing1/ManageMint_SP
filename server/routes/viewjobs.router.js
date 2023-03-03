@@ -33,34 +33,34 @@ router.post('/', (req, res) => {
 });
 
 
-// router.put('/:id', (req, res) => {
-//  // PUT route code here
-//  const queryText = ``;
-//  const newJobId = req.params.id;
-//  const newJobType = req.params.jobtype;
-//  // const newJob;
-//  pool.query(queryText, [])
-//    .then(() => {
-//      console.log('in my PUT router');
-//      res.sendStatus(200);
-//    }).catch((error) => {
-//      alert('There is an error in your PUT router request', error);
-//    })
-// });
+router.put('/:id', (req, res) => {
+ // PUT route code here
+ const queryText = ``;
+ const newJobId = req.params.id;
+ const newJobType = req.params.jobtype;
+ // const newJob;
+ pool.query(queryText, [])
+   .then(() => {
+     console.log('in my PUT router');
+     res.sendStatus(200);
+   }).catch((error) => {
+     alert('There is an error in your PUT router request', error);
+   })
+});
 
 
-// router.delete('/:id', (req, res) => {
-//  // DELETE route code here
-//  const deleteJobId = req.params.id;
-//  const queryText = `DELETE FROM "Job" WHERE id = $1;`;
-//  pool.query(queryText, [deleteJobId])
-//    .then(() => {
-//      console.log('in my PUT router');
-//      res.sendStatus(200);
-//    }).catch((error) => {
-//      alert('There is an error in your PUT router request', error);
-//    })
-// });
+router.delete('/:id', (req, res) => {
+ // DELETE route code here
+ const deleteJobId = req.params.id;
+ const queryText = `DELETE FROM "Job" WHERE id = $1;`;
+ pool.query(queryText, [deleteJobId])
+   .then(() => {
+     console.log('in my PUT router');
+     res.sendStatus(200);
+   }).catch((error) => {
+     alert('There is an error in your PUT router request', error);
+   })
+});
 
 
 module.exports = router;

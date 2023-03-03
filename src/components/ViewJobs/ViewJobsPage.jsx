@@ -21,7 +21,7 @@ function ViewJobsPage() {
     // };
 
     const editButton = () => {
-        history.push('/editjob');
+        // history.push('/editjob');
         console.log('More code needed to take user to the PUT request for edits, it might not need this history.push.');
     };
 
@@ -61,11 +61,15 @@ function ViewJobsPage() {
                         <h4> Laborer/s: {job.laborer} </h4>
                         <h4> Supervisor: {job.supervisor} </h4>
                         <h4> Job Notes: {job.notes} </h4>
+                        <br></br>
+                        <button text="submit" className="edit_job" onClick={() => alert(jobs.id)}> Edit Job </button>
                     </div>
                 ))}
             </section>
-            <button text="submit" className="edit_job" onClick={() => editButton()}> Edit Job </button>
+            {/* <button text="submit" className="edit_job" onClick={() => editButton()}> Edit Job </button> */}
+            {/* <button text="submit" className="delete_job" onClick={() => deleteButton()}> Delete Job </button> */}
             <button text="submit" className="delete_job" onClick={() => deleteButton()}> Delete Job </button>
+            {/* <button text="submit" className="job_complete" onClick={() => jobCompleteButton()}> Job Complete </button> */}
             <button text="submit" className="job_complete" onClick={() => jobCompleteButton()}> Job Complete </button>
             {/* <button text="submit" className="create_job" onClick={() => change()}> View Job Details </button> */}
 
