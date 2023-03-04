@@ -20,16 +20,23 @@ function ViewJobsPage() {
     //     }
     // };
 
-    const editButton = () => {
-        // history.push('/editjob');
+    const handleEdit = (data) => {
+
+        history.push('/editjob');
         console.log('More code needed to take user to the PUT request for edits, it might not need this history.push.');
     };
 
-    const deleteButton = () => {
+    const handleDelete = (id) => {
+        dispatch({
+            tpye: 'DELETE_A_JOB',
+            payload: id,
+        })
         history.push('/deletejob');
     };
 
-    const jobCompleteButton = () => {
+    const jobCompleteButton = (id) => {
+        let prevJobs = []
+        prevJobs.push(id);
         console.log('The goal is to created a way to drop completed jobs down to the previous jobs section');
     };
 
@@ -37,6 +44,10 @@ function ViewJobsPage() {
         history.push('/user');
     };
 
+    const previosJobs = () => {
+        
+    }
+ 
     useEffect(() => {
         dispatch({
             type: 'FETCH_JOB_VIEWS'
@@ -63,12 +74,12 @@ function ViewJobsPage() {
                         <h4> Job Notes: {job.notes} </h4>
                         <br></br>
                         <button text="submit" className="edit_job" onClick={() => alert(jobs.id)}> Edit Job </button>
+                        <button text="submit" className="delete_job" onClick={() => console.log(id)}> Delete Job </button>
                     </div>
                 ))}
             </section>
             {/* <button text="submit" className="edit_job" onClick={() => editButton()}> Edit Job </button> */}
             {/* <button text="submit" className="delete_job" onClick={() => deleteButton()}> Delete Job </button> */}
-            <button text="submit" className="delete_job" onClick={() => deleteButton()}> Delete Job </button>
             {/* <button text="submit" className="job_complete" onClick={() => jobCompleteButton()}> Job Complete </button> */}
             <button text="submit" className="job_complete" onClick={() => jobCompleteButton()}> Job Complete </button>
             {/* <button text="submit" className="create_job" onClick={() => change()}> View Job Details </button> */}
@@ -79,6 +90,7 @@ function ViewJobsPage() {
             <button text="submit" className="back_home" onClick={() => backButton()}> Back to Home Page </button>
 
             <h1> Previous Jobs </h1>
+            <h3> </h3>
             <h3> STRETCH GOAL </h3>
 
             <br></br>

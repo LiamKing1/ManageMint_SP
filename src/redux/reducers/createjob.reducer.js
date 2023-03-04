@@ -2,32 +2,12 @@ const jobCreationReducer = (state = [], action) => {
   switch (action.type) {
     case 'SET_NEW_JOB':
       return action.payload;
-    case 'JOB_NAME':
-      return action.payload;
-    case 'JOB_NUMBER':
-      return action.payload;
-    case 'JOB_TYPE':
-      return action.payload;
-    case 'START_DATE':
-      return action.payload;
-    case 'START_TIME':
-      return action.payload;
-    case 'DURATION':
-      return action.payload;
-    case 'CON_NAME':
-      return action.payload;
-    case 'CON_NUM':
-      return action.payload;
-    case 'LAB_NAME':
-      return action.payload;
-    case 'SUP_NAME':
-      return action.payload;
-    case 'JOB_NOTES':
-      return action.payload;
     default:
       return state;
   }
 };
+``
+export default jobCreationReducer;
 
 // const jobNum = (state = 0, action) => {
 //   switch (action.type) {
@@ -119,4 +99,31 @@ const jobCreationReducer = (state = [], action) => {
 //   }
 // }
 
-export default jobCreationReducer;
+// switch (action.type) {
+//   case 'SET_NEW_JOB':
+//     return action.payload;
+//   case 'JOB_NAME':
+//     return action.payload;
+//   case 'JOB_NUMBER':
+//     return action.payload;
+//   case 'JOB_TYPE':
+//     return action.payload;
+//   case 'START_DATE':
+//     return action.payload;
+//   case 'START_TIME':
+//     return action.payload;
+//   case 'DURATION':
+//     return action.payload;
+//   case 'CON_NAME':
+//     return action.payload;
+//   case 'CON_NUM':
+//     return action.payload;
+//   case 'LAB_NAME':
+//     return action.payload;
+//   case 'SUP_NAME':
+//     return action.payload;
+//   case 'JOB_NOTES':
+//     return action.payload;
+//   default:
+//     return state;
+// }

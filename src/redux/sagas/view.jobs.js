@@ -1,7 +1,7 @@
 import axios from 'axios';
-import { put, takeLatest } from 'redux-saga/effects';
+import { put, takeEvery } from 'redux-saga/effects';
 
-// worker Saga: will be fired on "FETCH_USER" actions
+// Getting jobs from database
 function* fetchAllJobs() {
   try {
     const config = {
@@ -9,16 +9,8 @@ function* fetchAllJobs() {
       withCredentials: true,
     };
 
-    // the config includes credentials which
-    // allow the server session to recognize the user
-    // If a user is logged in, this will return their information
-    // from the server session (req.user)
-    // let genresId = action.payload;
     const response = yield axios.get('/api/viewjobs', config);
 
-    // now that the session has given us a user object
-    // with an id and username set the client-side user object to let
-    // the client-side code know the user is logged in
     yield put({
         type: 'SET_JOB_VIEWS',
         payload: response.data
@@ -26,10 +18,72 @@ function* fetchAllJobs() {
   } catch (error) {
     console.log('User get request failed', error);
   }
+} // END getting jobs from database
+
+// Creating a new job that saves in the database
+function* createNewJob(action) {
+  try {
+    const config = {
+      headers: { 'Content-Type': 'application/json' },
+      withCredentials: true,
+    };
+
+    const jobId = action.payload;
+    const response = yield axios.get(`/api/user/createjob/${jobId}`, config);
+
+    yield put({ 
+      type: 'CREATE_JOB',
+      payload: response.data 
+    });
+  } catch (error) {
+    console.log('User get request failed', error);
+  }
+} // END creating a new job that saves in the database
+
+// Editing individual job in database
+function* editJob() {
+  try {
+    const config = {
+      headers: { 'Content-Type': 'application/json' },
+      withCredentials: true,
+    };
+
+    const jobId = action.payload.id;
+    const response = yield axios.get(`/api/user/${jobId}`, config);
+
+    yield put({ 
+      type: 'EDIT_JOB',
+      payload: response.data 
+    });
+  } catch (error) {
+    console.log('User get request failed', error);
+  }
+} // END editing individual job in database
+
+// Deleting a job from the database
+function* deleteJob() {
+  try {
+    const config = {
+      headers: { 'Content-Type': 'application/json' },
+      withCredentials: true,
+    };
+
+    const response = yield axios.get('/api/user/viewjobs', config);
+
+    yield put({ 
+      type: 'DELETE_JOB',
+      payload: response.data 
+    });
+  } catch (error) {
+    console.log('User get request failed', error);
+  }
+} // END deleting a job from the database
+
+function* jobsSaga() {
+  yield takeEvery('FETCH_JOB_VIEWS', fetchAllJobs);
+  yield takeEvery('CREATE_NEW_JOB', createNewJob);
+  yield takeEvery('EDIT_A_JOB', editJob);
+  yield takeEvery('DELETE_A_JOB', deleteJob);
 }
 
-function* allJobsSaga() {
-  yield takeLatest('FETCH_JOB_VIEWS', fetchAllJobs);
-}
-
-export default allJobsSaga;
+export default jobsSaga;
