@@ -1,7 +1,8 @@
-const deleteJobReducer = (state = [], action) => {
+
+const deleteJobReducer = (state = {}, action) => {
     switch (action.type) {
       case 'DELETE_JOB':
-        return [...state, action.payload];
+        return action.payload;
       default:
         return state;
     }

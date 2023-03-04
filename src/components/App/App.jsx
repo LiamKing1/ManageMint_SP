@@ -127,11 +127,11 @@ function App() {
             <SubmitPage />
           </ProtectedRoute>
 
-          <ProtectedRoute exact path="/deletejob">
+          <ProtectedRoute exact path="/deletejob/:id">
             <DeleteJob />
           </ProtectedRoute>
 
-          <ProtectedRoute exact path="/editjob">
+          <ProtectedRoute exact path="/editjob/:id">
             <EditJob />
           </ProtectedRoute>
           

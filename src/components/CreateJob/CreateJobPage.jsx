@@ -142,8 +142,6 @@ function CreateJobPage() {
 
             <button text="submit" className="back_button" onClick={() => backButton()}> Back to Home Page </button>
 
-
-            {/* <LogOutButton className="btn" /> */}
         </div>
     )
 }

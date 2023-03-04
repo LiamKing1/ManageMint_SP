@@ -20,16 +20,33 @@ function ViewJobsPage() {
     //     }
     // };
 
-    const handleEdit = (data) => {
-
+    const handleEdit = () => {
+        dispatch({
+            tpye: 'EDIT_A_JOB',
+            payload: editById,
+        })
         history.push('/editjob');
         console.log('More code needed to take user to the PUT request for edits, it might not need this history.push.');
     };
 
-    const handleDelete = (id) => {
+    const handleDelete = () => {
+        const deleteJob = {
+            id,
+            jobname,
+            jobnum,
+            jobtype,
+            start_date,
+            start_time,
+            duration,
+            contactname,
+            contactnum,
+            laborer,
+            supervisor,
+            notes
+        }
         dispatch({
             tpye: 'DELETE_A_JOB',
-            payload: id,
+            payload: deleteJob,
         })
         history.push('/deletejob');
     };
@@ -44,10 +61,6 @@ function ViewJobsPage() {
         history.push('/user');
     };
 
-    const previosJobs = () => {
-        
-    }
- 
     useEffect(() => {
         dispatch({
             type: 'FETCH_JOB_VIEWS'
@@ -74,7 +87,7 @@ function ViewJobsPage() {
                         <h4> Job Notes: {job.notes} </h4>
                         <br></br>
                         <button text="submit" className="edit_job" onClick={() => alert(jobs.id)}> Edit Job </button>
-                        <button text="submit" className="delete_job" onClick={() => console.log(id)}> Delete Job </button>
+                        <button text="submit" className="delete_job" onClick={() => handleDelete()}> Delete Job </button>
                     </div>
                 ))}
             </section>

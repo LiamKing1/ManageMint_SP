@@ -3,9 +3,6 @@ import loginSaga from './login.saga';
 import registrationSaga from './registration.saga';
 import userSaga from './user.saga';
 import jobsSaga from './view.jobs';
-// import createJobSaga from './createjobsaga';
-// import deleteJobSaga from './deletejob.saga';
-// import editJobSaga from './editjob.saga';
 
 // rootSaga is the primary saga.
 // It bundles up all of the other sagas so our project can use them.
@@ -20,8 +17,5 @@ export default function* rootSaga() {
     registrationSaga(),
     userSaga(),
     jobsSaga(),
-    // createJobSaga(),
-    // deleteJobSaga(),
-    // editJobSaga(),
   ]);
 }

@@ -1,12 +1,8 @@
 
-const initialState = {
-    jobs: [],
-};
-
-const editJobReducer = (state = initialState, action) => {
+const editJobReducer = (state = [], action) => {
     switch (action.type) {
       case 'EDIT_JOB':
-        return {...state, jobs: action.payload};
+        return action.payload;
       default:
         return state;
     }
