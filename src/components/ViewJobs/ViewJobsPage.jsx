@@ -15,11 +15,13 @@ function ViewJobsPage() {
 
     const backHomeButton = () => {
         history.push('/user');
+        window.location.reload(true);
     };
 
     const handleDetails = (id) => {
         console.log('In ViewJobs page', id);
         history.push(`/jobdetails/${id}`);
+        // window.location.reload(true);
     };
 
 
@@ -41,11 +43,11 @@ function ViewJobsPage() {
             <section className="table">
                 {jobs.map(job => (
                     <div className="jobs" key={job.id}>
-                        <h2> Job Name: {job.jobname} </h2>
-                        <h2> Job Number: {job.jobnum} </h2>
-                        <h2> Contact Name: {job.contactname} </h2>
-                        <h2> Contact Number: {job.contactnum} </h2>
-                        <h2> Supervisor: {job.supervisor} </h2>
+                        <h2> Job Name: <i><u> {job.jobname} </u></i> </h2>
+                        <h2> Job Number: <i><u> {job.jobnum} </u></i> </h2>
+                        <h2> Contact Name: <i><u> {job.contactname} </u></i> </h2>
+                        <h2> Contact Number: <i><u> {job.contactnum} </u></i> </h2>
+                        <h2> Supervisor: <i><u> {job.supervisor} </u></i> </h2>
                         <br></br>
                         {/* <button text="submit" className="buttons" onClick={() => handleEdit()}> Edit Job </button>
                         <button text="submit" className="buttons" onClick={() => handleDelete()}> Delete Job </button>

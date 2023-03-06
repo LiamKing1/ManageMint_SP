@@ -39,6 +39,7 @@ function CreateJobPage() {
     const backButton = () => {
         console.log('I want to make this go back to whatever page it just left');
         history.push('/user');
+        window.location.reload(true);
     };
 
     // 'CREATE_NEW_JOB'

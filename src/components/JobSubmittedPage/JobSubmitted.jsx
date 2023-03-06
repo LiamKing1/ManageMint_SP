@@ -6,7 +6,8 @@ function SubmitPage() {
 
     const viewJobs = () => {
         history.push('/viewjobs');
-    }
+        window.location.reload(true);
+    };
 
     return (
         <div>

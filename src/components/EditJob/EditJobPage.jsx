@@ -7,11 +7,13 @@ function EditJob() {
     const user = useSelector((store) => store.user);
 
     const cancelEdit = () => {
-        history.push('/viewjobs')
+        history.push('/viewjobs');
+        window.location.reload(true);
     };
 
     const submitEdit = () => {
         console.log('More code needed to submit user/s edit');
+        window.location.reload(true);
     };
 
     return (
