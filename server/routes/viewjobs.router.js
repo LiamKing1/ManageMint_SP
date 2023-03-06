@@ -23,7 +23,20 @@ router.post('/', (req, res) => {
  const newJobInput = req.body;
  const queryText = `INSERT INTO "Job" ("user_id", "jobname", "jobnum", "jobtype", "start_date", "start_time", "duration", "contactnum", "contactname", "laborer", "supervisor", "notes")
  VALUES ('$1', '$2', '$3', '$4', '$5', '$6', '$7', '$8', '$9', '$10', '$11', '$12');`;
- pool.query(queryText, [newJobInput.user_id, newJobInput.jobname, newJobInput.jobnum, newJobInput.jobtype, newJobInput.start_date, newJobInput.start_time, newJobInput.duration, newJobInput.contactnum, newJobInput.contactname, newJobInput.laborer, newJobInput.supervisor, newJobInput.notes])
+ pool.query(queryText, [
+  newJobInput.user_id,
+  newJobInput.jobname,
+  newJobInput.jobnum,
+  newJobInput.jobtype,
+  newJobInput.start_date,
+  newJobInput.start_time,
+  newJobInput.duration,
+  newJobInput.contactnum,
+  newJobInput.contactname,
+  newJobInput.laborer,
+  newJobInput.supervisor,
+  newJobInput.notes
+])
    .then((result) => {
     sendStatus(201);
      console.log('In my POST router', result.rows);
@@ -34,14 +47,27 @@ router.post('/', (req, res) => {
 });
 
 
-router.put('/:id', (req, res) => {
+router.put('/viewjobs/:id', (req, res) => {
  // PUT route code here
- const newJobId = req.params.id;
+ const newJobId = req.body;
  const queryText = `
  UPDATE "Job"
  SET "jobname"=$1, "jobnum"=$2, "jobtype"=$3, "start_date"=$4, "start_time"=$5, "duration"=$6, "contactnum"=$7, "contactname"=$8, "laborer"=$9, "supervisor"=$10, "notes"=$11
  WHERE "id"=$12;`;
- pool.query(queryText, [newJobId.user_id, newJobId.jobname, newJobId.jobnum, newJobId.jobtype, newJobId.start_date, newJobId.start_time, newJobId.duration, newJobId.contactnum, newJobId.contactname, newJobId.laborer, newJobId.supervisor, newJobId.notes])
+ pool.query(queryText, [
+  newJobId.user_id,
+  newJobId.jobname,
+  newJobId.jobnum,
+  newJobId.jobtype,
+  newJobId.start_date,
+  newJobId.start_time,
+  newJobId.duration,
+  newJobId.contactnum,
+  newJobId.contactname,
+  newJobId.laborer,
+  newJobId.supervisor,
+  newJobId.notes
+])
    .then(() => {
      console.log('in my PUT router');
      res.sendStatus(201);

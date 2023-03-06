@@ -1,65 +1,26 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+import DetailsPage from '../JobDetails/jobdetails';
 // import LogOutButton from '../LogOutButton/LogOutButton';
 
 function ViewJobsPage() {
 
     const dispatch = useDispatch();
     const jobs = useSelector((store) => store.viewJobsReducer);
+    const user = useSelector((store) => store.user);
 
     const history = useHistory();
 
-    // const pushToPrevious = () => {
-    //     let prevJobArray = [];
-    //     for (let i = 0; i > .length; i++) {
-    //         if (array[i]) {
-    //             prevJobArray.push(prevJobArray);
-    //         }
-    //         return ;
-    //     }
-    // };
 
-    const handleEdit = () => {
-        dispatch({
-            tpye: 'EDIT_A_JOB',
-            payload: editById,
-        })
-        history.push('/editjob');
-        console.log('More code needed to take user to the PUT request for edits, it might not need this history.push.');
-    };
-
-    const handleDelete = () => {
-        const deleteJob = {
-            id,
-            jobname,
-            jobnum,
-            jobtype,
-            start_date,
-            start_time,
-            duration,
-            contactname,
-            contactnum,
-            laborer,
-            supervisor,
-            notes
-        }
-        dispatch({
-            tpye: 'DELETE_A_JOB',
-            payload: deleteJob,
-        })
-        history.push('/deletejob');
-    };
-
-    const jobCompleteButton = (id) => {
-        let prevJobs = []
-        prevJobs.push(id);
-        console.log('The goal is to created a way to drop completed jobs down to the previous jobs section');
-    };
-
-    const backButton = () => {
+    const backHomeButton = () => {
         history.push('/user');
     };
+
+    const handleDetails = () => {
+        history.push('/jobdetails/:id');
+    };
+
 
     useEffect(() => {
         dispatch({
@@ -69,49 +30,46 @@ function ViewJobsPage() {
 
     return (
         <div>
-            <h1> Current Job </h1>
+            <div className="greeting" >
+                <h2>User, {user.username}!</h2>
+                <p>Your ID is: {user.id}</p>
+            </div>
 
-            <section className="jobs">
+            <h1 className="title"> Current Job </h1>
+
+            <section className="table">
                 {jobs.map(job => (
-                    <div key={job.id}>
-                        <h4> Job Name: {job.jobname} </h4>
-                        <h4> Job Number: {job.jobnum} </h4>
-                        <h4> Job Type: {job.jobtype} </h4>
-                        <h4> Start Date: {job.start_date} </h4>
-                        <h4> Start Time: {job.start_time} </h4>
-                        <h4> Duration: {job.duration} hours </h4>
-                        <h4> Contact Name: {job.contactname} </h4>
-                        <h4> Contact Number: {job.contactnum} </h4>
-                        <h4> Laborer/s: {job.laborer} </h4>
-                        <h4> Supervisor: {job.supervisor} </h4>
-                        <h4> Job Notes: {job.notes} </h4>
+                    <div className="jobs" key={job.id}>
+                        <h2> Job Name: {job.jobname} </h2>
+                        <h2> Job Number: {job.jobnum} </h2>
+                        <h2> Contact Name: {job.contactname} </h2>
+                        <h2> Contact Number: {job.contactnum} </h2>
+                        <h2> Supervisor: {job.supervisor} </h2>
                         <br></br>
-                        <button text="submit" className="edit_job" onClick={() => alert(jobs.id)}> Edit Job </button>
-                        <button text="submit" className="delete_job" onClick={() => handleDelete()}> Delete Job </button>
+                        {/* <button text="submit" className="buttons" onClick={() => handleEdit()}> Edit Job </button>
+                        <button text="submit" className="buttons" onClick={() => handleDelete()}> Delete Job </button>
+                        <button text="submit" className="buttons" onClick={() => jobCompleteButton()}> Job Complete </button> */}
+                        <button text="submit" className="buttons" onClick={() => handleDetails()}> View Details </button>
                     </div>
                 ))}
             </section>
-            {/* <button text="submit" className="edit_job" onClick={() => editButton()}> Edit Job </button> */}
-            {/* <button text="submit" className="delete_job" onClick={() => deleteButton()}> Delete Job </button> */}
-            {/* <button text="submit" className="job_complete" onClick={() => jobCompleteButton()}> Job Complete </button> */}
-            <button text="submit" className="job_complete" onClick={() => jobCompleteButton()}> Job Complete </button>
-            {/* <button text="submit" className="create_job" onClick={() => change()}> View Job Details </button> */}
 
             <br></br>
             <br></br>
 
-            <button text="submit" className="back_home" onClick={() => backButton()}> Back to Home Page </button>
+            <div className="back-btns">
+                <button text="submit" className="buttons" onClick={() => backHomeButton()}> Back to Home Page </button>
+            </div>
+            
+            <div className="prev-sect">
+                <h1 className="table"> Previous Jobs </h1>
+                {/* <h3> <DetailsPage complete={jobCompleteButton} /> </h3> */}
+                <h3> STRETCH GOAL </h3>
+            </div>
 
-            <h1> Previous Jobs </h1>
-            <h3> </h3>
-            <h3> STRETCH GOAL </h3>
-
-            <br></br>
-            <br></br>
-
-            <button text="submit" className="back_home" onClick={() => backButton()}> Back to Home Page </button>
-
-            {/* <LogOutButton className="btn" /> */}
+            <div className="back-btns">
+                <button text="submit" className="buttons" onClick={() => backHomeButton()}> Back to Home Page </button>
+            </div>
         </div>
     );
 }

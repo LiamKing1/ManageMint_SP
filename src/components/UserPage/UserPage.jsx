@@ -25,22 +25,33 @@ function UserPage() {
   };
 
   return (
-    <div className="container">
-      <h2>Welcome, {user.username}!</h2>
-      <img></img>
-      <p>Your ID is: {user.id}</p>
+    // className="container"
+    <div >
+      <div className="greeting">
+        <h2>Welcome, {user.username}!</h2>
+        <img></img>
+        <p>Your ID is: {user.id}</p>
+      </div>
 
-      <h1> View Jobs </h1>
-      <button text="submit" className="view_jobs" onClick={() => viewJobsButton()}> View Jobs </button>
+      <div className="container">
+        <h1> View Jobs </h1>
+        <button text="submit" className="buttons" onClick={() => viewJobsButton()}> View Jobs </button>
+      </div>
 
-      <h1> Create Job </h1>
-      <button text="submit" className="create_job" onClick={() => createJobButton()}> Create Jobs </button>
+      <div className="container">
+        <h1> Create Job </h1>
+        <button text="submit" className="buttons" onClick={() => createJobButton()}> Create Jobs </button>
+      </div>
 
-      <h1> Create Safety Advisory </h1>
-      <button text="submit" className="create_advisory" onClick={() => advisorybButton()}> Create Advisory </button>
+      <div className="container">
+        <h1> Create Safety Advisory </h1>
+        <button text="submit" className="buttons" onClick={() => advisorybButton()}> Create Advisory </button>
+      </div>
 
-      <h1> View OT Requests </h1>
-      <button text="submit" className="view_ot" onClick={() => viewOtButton()}> View OT Requests </button>
+      <div className="container">
+        <h1> View OT Requests </h1>
+        <button text="submit" className="buttons" onClick={() => viewOtButton()}> View OT Requests </button>
+      </div>
 
       {/* <LogOutButton className="btn" /> */}
     </div>

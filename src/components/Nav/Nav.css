@@ -1,9 +1,10 @@
 .nav {
   /* flex box layout */
+  font-size: xx-large;
   display: flex;
-  justify-content: space-between;
+  justify-content:center;
   align-items: center;
-
+  padding: 20px;
   margin: 0 0 30px;
   background-color: rgb(234, 50, 50);
   overflow: hidden;
@@ -14,17 +15,21 @@
 }
 
 .nav-title {
+  font-family:'Courier New', Courier, monospace;
+  text-align: center;
+  color: black;
   font-size: 24px;
   font-weight: 700;
-  color: #f2f2f2;
-  padding-left: 10px;
+  padding: 10px;
   margin: 0;
+  cursor: pointer;
 }
 
 .navLink {
+  text-align: center;
   display: inline-block;
   color: #f2f2f2;
-  background-color: #00acb0;
+  background-color: #909191;
   text-align: center;
   padding: 24px 10px;
   text-decoration: none;

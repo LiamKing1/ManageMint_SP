@@ -5,9 +5,13 @@ body,
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  margin: 0px;
+  margin: 75px;
 }
+
+/* border-style:double;
+padding: 30px;
+border-color: #e01616;
+margin: 75px; */
 
 img {
   display: inline-block;
@@ -109,4 +113,86 @@ Form Treatment
 input {
   margin: 5px;
   margin-bottom: 10px;
+}
+
+.table {
+
+}
+
+.greeting {
+  font-family:'Courier New', Courier, monospace;
+  text-align: center;
+}
+
+.container {
+  font-family:Impact, 'Arial Narrow Bold', sans-serif;
+  text-align: center;
+  margin-left: 425px;
+  margin-right: 425px;
+  margin-top: 15px;
+  text-align: center;
+  display: block;
+  border-color: brown;
+  border-style:ridge;
+  border-radius: 50px;
+  height: auto;
+  width: auto;
+}
+
+.buttons {
+  font-family:'Courier New', Courier, monospace;
+  text-align: center;
+  margin: 15px;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: x-large;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+}
+
+div.jobs {
+  font-family:Impact, 'Arial Narrow Bold', sans-serif;
+  margin-left: 425px;
+  margin-right: 425px;
+  margin-top: 15px;
+  text-align: center;
+  display: block;
+  border-color: brown;
+  border-style:ridge;
+  border-radius: 50px;
+  height: auto;
+  width: auto;
+}
+
+.create {
+  text-align: center;
+  margin-left: 425px;
+  margin-right: 425px;
+  margin-top: 15px;
+  text-align: center;
+  display: block;
+  border-color: brown;
+  border-style:ridge;
+  border-radius: 50px;
+  height: auto;
+  width: auto;
+}
+
+h4 {
+  margin: 10px;
+}
+
+.title {
+  font-family: Impact, 'Arial Narrow Bold', sans-serif;
+  text-align: center;
+}
+
+.back-btns {
+  text-align: center;
+  padding-top: 15px;
+}
+
+.prev-sect {
+  font-family: Impact, 'Arial Narrow Bold', sans-serif;
+  text-align: center;
 }
