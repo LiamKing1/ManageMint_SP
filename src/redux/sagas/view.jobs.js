@@ -14,13 +14,25 @@ function* fetchAllJobs() {
   }
 } // END getting jobs from database
 
+function* getADetail(action) {
+  try {
+    const id = action.payload
+    const response = yield axios.get(`/api/viewjobs/${id}`);
+    yield put({
+      type: 'SET_JOB_DATA',
+      payload: response.data
+    });
+  } catch (error) {
+    console.log('User get request failed', error);
+  }
+} // END getting jobs from database
 
 
 // Creating a new job that saves in the database
-function* createNewJob() {
+function* createNewJob(action) {
   try {
     // const jobId = action.payload;
-    const response = yield axios.post(`/api/createjob`);
+    const response = yield axios.post(`/api/viewjobs`, action.payload);
     yield put({
       type: 'CREATE_JOB',
       payload: response.data
@@ -33,7 +45,7 @@ function* createNewJob() {
 
 
 // Editing individual job in database
-function* editJob() {
+function* editJob(action) {
   try {
     const editById = action.payload.id;
     const response = yield axios.put(`/api/viewjobs/${editById}`);
@@ -66,6 +78,7 @@ function* deleteJob() {
 
 function* jobsSaga() {
   yield takeEvery('FETCH_JOB_VIEWS', fetchAllJobs);
+  yield takeEvery('GET_A_DETAIL', getADetail);
   yield takeEvery('CREATE_NEW_JOB', createNewJob);
   yield takeEvery('EDIT_A_JOB', editJob);
   yield takeEvery('DELETE_A_JOB', deleteJob);

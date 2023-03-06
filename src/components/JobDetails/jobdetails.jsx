@@ -1,23 +1,25 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { useHistory } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 
 function DetailsPage() {
 
     const dispatch = useDispatch();
 
-    const jobs = useSelector((store) => store.viewJobsReducer);
+    const job = useSelector((store) => store.viewJobsReducer);
     const user = useSelector((store) => store.user);
+    const {id} = useParams();
     const history = useHistory();
 
     useEffect(() => {
         dispatch({
-            type: 'FETCH_JOB_VIEWS'
+            type: 'GET_A_DETAIL',
+            payload: id
         });
     }, []);
 
     const handleEdit = () => {
-        history.push('/editjob/:id');
+        history.push('/editjob');
         // console.log('More code needed to take user to the PUT request for edits, it might not need this history.push.');
     };
 
@@ -78,7 +80,7 @@ function DetailsPage() {
             <h1 className="title"> Current Job </h1>
 
             <section className="table">
-                {jobs.map(job => (
+                
                     <div className="jobs" key={job.id}>
                         <h2> Job Name: {job.jobname} </h2>
                         <h4> Job Number: {job.jobnum} </h4>
@@ -97,7 +99,6 @@ function DetailsPage() {
                         <button text="submit" className="buttons" onClick={() => jobCompleteButton()}> Job Complete </button>
                     </div>
 
-                ))}
             </section>
 
             <div className="back-btns">

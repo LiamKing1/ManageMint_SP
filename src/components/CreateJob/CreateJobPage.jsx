@@ -46,15 +46,15 @@ function CreateJobPage() {
     const handleCreateJob = (event) => {
         event.preventDefault();
         dispatch({
-            type: 'FETCH_NEW_JOB',
+            type: 'CREATE_NEW_JOB',
             payload: {
-                userid: userId,
+                userid: Number(userId),
                 jobname: newJobName,
-                jobnum: newJobNumber,
+                jobnum: Number(newJobNumber),
                 jobtype: newJobType,
                 start_date: newStartDate,
                 start_time: newStartTime,
-                duration: newDuration,
+                duration: Number(newDuration),
                 contactname: newContactName,
                 contactnum: newContactNumber,
                 laborer: newLaborer,
@@ -62,7 +62,7 @@ function CreateJobPage() {
                 notes: newNotes
             }
         });
-        history.push('/jobsubmitted');
+        // history.push('/jobsubmitted');
     };
 
     return (

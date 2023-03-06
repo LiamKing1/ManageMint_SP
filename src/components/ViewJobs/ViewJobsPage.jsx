@@ -17,8 +17,9 @@ function ViewJobsPage() {
         history.push('/user');
     };
 
-    const handleDetails = () => {
-        history.push('/jobdetails/:id');
+    const handleDetails = (id) => {
+        console.log('In ViewJobs page', id);
+        history.push(`/jobdetails/${id}`);
     };
 
 
@@ -49,7 +50,7 @@ function ViewJobsPage() {
                         {/* <button text="submit" className="buttons" onClick={() => handleEdit()}> Edit Job </button>
                         <button text="submit" className="buttons" onClick={() => handleDelete()}> Delete Job </button>
                         <button text="submit" className="buttons" onClick={() => jobCompleteButton()}> Job Complete </button> */}
-                        <button text="submit" className="buttons" onClick={() => handleDetails()}> View Details </button>
+                        <button text="submit" className="buttons" onClick={() => handleDetails(job.id)}> View Details </button>
                     </div>
                 ))}
             </section>

@@ -10,10 +10,10 @@ function SubmitPage() {
 
     return (
         <div>
-
-            <h1> Congratulations, job has been created  </h1>
-            <button text="submit" className="view_jobs" onClick={() => viewJobs()}> View Jobs </button>
-
+            <div className="back-btns">
+                <h1> Congratulations, job has been created  </h1>
+                <button text="submit" className="view_jobs" onClick={() => viewJobs()}> View Jobs </button>
+            </div>
         </div>
     )
 };
