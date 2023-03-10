@@ -1,5 +1,5 @@
 import React from 'react';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 // import LogOutButton from '../LogOutButton/LogOutButton';
@@ -28,28 +28,18 @@ function CreateJobPage() {
     const dispatch = useDispatch();
     const history = useHistory();
 
-
-    // useEffect(() => {
-    //     dispatch({
-    //         type: 'FETCH_NEW_JOB',
-    //         payload: id
-    //     })
-    // }, []);
-
     const backButton = () => {
         console.log('I want to make this go back to whatever page it just left');
         history.push('/user');
         window.location.reload(true);
     };
 
-    // 'CREATE_NEW_JOB'
-
     const handleCreateJob = (event) => {
         event.preventDefault();
         dispatch({
             type: 'CREATE_NEW_JOB',
             payload: {
-                userid: Number(userId),
+                user_id: Number(userId),
                 jobname: newJobName,
                 jobnum: Number(newJobNumber),
                 jobtype: newJobType,
@@ -63,7 +53,7 @@ function CreateJobPage() {
                 notes: newNotes
             }
         });
-        // history.push('/jobsubmitted');
+        history.push('/jobsubmitted');
     };
 
     return (
@@ -75,7 +65,7 @@ function CreateJobPage() {
 
             <h1 className="title"> Create Job </h1>
 
-            <div className="create">
+            <div className="container">
                 <form onSubmit={handleCreateJob}>
                     <label htmlFor="user-id"> User Id: </label>
                     <input id="user-id" type="number" value={userId} onChange={(event) => { newUserId(event.target.value) }} />

@@ -39,9 +39,9 @@ function Nav() {
         </Link>
 
         {user.id && (
-          <>
+        <>
           <LogOutButton className="nav-title" />
-          </>
+        </>
         )}
 
       </div>

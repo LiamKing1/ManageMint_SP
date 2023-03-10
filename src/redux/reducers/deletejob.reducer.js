@@ -1,5 +1,5 @@
 
-const deleteJobReducer = (state = {}, action) => {
+const deleteJobReducer = (state = [], action) => {
     switch (action.type) {
       case 'DELETE_JOB':
         return action.payload;

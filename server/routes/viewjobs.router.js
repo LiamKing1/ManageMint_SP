@@ -20,7 +20,7 @@ router.get('/:id', (req, res) => {
   // GET route code here
   const id = req.params.id;
   console.log('In GET request for ID', id);
-  const queryText = 'SELECT * FROM "Job" WHERE "id" = $1';
+  const queryText = 'SELECT * FROM "Job" WHERE "id" = $1;';
   pool.query(queryText, [id])
     .then((result) => {
       console.log('In my GET router', result);
@@ -62,9 +62,9 @@ router.post('/', (req, res) => {
 });
 
 
-router.put('/viewjobs/:id', (req, res) => {
+router.put('/:id', (req, res) => {
   // PUT route code here
-  const newJobId = req.body;
+  const newJobId = req.params.id;
   const queryText = `
  UPDATE "Job"
  SET "jobname"=$1, "jobnum"=$2, "jobtype"=$3, "start_date"=$4, "start_time"=$5, "duration"=$6, "contactnum"=$7, "contactname"=$8, "laborer"=$9, "supervisor"=$10, "notes"=$11
@@ -95,14 +95,15 @@ router.put('/viewjobs/:id', (req, res) => {
 
 router.delete('/:id', (req, res) => {
   // DELETE route code here
-  const deleteJobId = req.params.id;
-  const queryText = `DELETE FROM "Job" WHERE id = $1;`;
-  pool.query(queryText, [deleteJobId])
+  // const deleteById = req.params.id;
+  const queryText = `DELETE FROM "Job" WHERE "id" = ${req.params.id};`;
+  console.log('WE are in req.params.id', req.params.id);
+  pool.query(queryText)
     .then(() => {
-      console.log('in my PUT router');
+      console.log('in my DELETE router');
       res.sendStatus(201);
     }).catch((error) => {
-      console.log('There is an error in your PUT router request', error);
+      console.log('There is an error in your DELETE router request', error);
     })
 });
 

@@ -2,6 +2,7 @@ html,
 body,
 #react-root {
   height: 100%;
+  background-color:darkgrey;
 }
 
 body {
@@ -115,10 +116,6 @@ input {
   margin-bottom: 10px;
 }
 
-.table {
-
-}
-
 .greeting {
   font-family:'Courier New', Courier, monospace;
   text-align: center;
@@ -127,8 +124,8 @@ input {
 .container {
   font-family:Impact, 'Arial Narrow Bold', sans-serif;
   text-align: center;
-  margin-left: 425px;
-  margin-right: 425px;
+  margin-left: 350px;
+  margin-right: 350px;
   margin-top: 15px;
   text-align: center;
   display: block;
@@ -137,6 +134,7 @@ input {
   border-radius: 50px;
   height: auto;
   width: auto;
+  background-color:oldlace;
 }
 
 .buttons {
@@ -162,6 +160,7 @@ div.jobs {
   border-radius: 50px;
   height: auto;
   width: auto;
+  background-color: oldlace;
 }
 
 .create {
@@ -195,4 +194,8 @@ h4 {
 .prev-sect {
   font-family: Impact, 'Arial Narrow Bold', sans-serif;
   text-align: center;
+}
+
+.buttons:hover {
+  background-color: red;
 }

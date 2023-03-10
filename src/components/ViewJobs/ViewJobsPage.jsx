@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import DetailsPage from '../JobDetails/jobdetails';
 // import LogOutButton from '../LogOutButton/LogOutButton';
 
 function ViewJobsPage() {
@@ -19,7 +18,6 @@ function ViewJobsPage() {
     };
 
     const handleDetails = (id) => {
-        console.log('In ViewJobs page', id);
         history.push(`/jobdetails/${id}`);
         // window.location.reload(true);
     };

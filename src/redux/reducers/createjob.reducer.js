@@ -1,5 +1,5 @@
 
-const jobCreationReducer = (state = 0, action) => {
+const jobCreationReducer = (state = [], action) => {
   switch (action.type) {
     case 'CREATE_JOB':
       return action.payload;

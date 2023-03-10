@@ -47,30 +47,30 @@ function* createNewJob(action) {
 // Editing individual job in database
 function* editJob(action) {
   try {
-    const editById = action.payload.id;
-    const response = yield axios.put(`/api/viewjobs/${editById}`);
+    const id = action.payload.id;
+    const response = yield axios.put(`/api/viewjobs/${id}`); 
     yield put({
       type: 'EDIT_JOB',
       payload: response.data
     });
   } catch (error) {
-    console.log('User get request failed', error);
+    console.log('User PUT request failed', error);
   }
 } // END editing individual job in database
 
 
 
 // Deleting a job from the database
-function* deleteJob() {
+function* deleteJob(action) {
   try {
-    const deleteById = action.payload.id;
-    const response = yield axios.delete(`/api/viewjobs/${deleteById}`);
+    const id = action.payload;
+    const response = yield axios.delete(`/api/viewjobs/${id}`);
     yield put({
-      type: 'FETCH_JOB_VIEWS',
+      type: 'DELETE_JOB',
       payload: response.data
     });
   } catch (error) {
-    console.log('User get request failed', error);
+    console.log('User DELETE request failed', error);
   }
 } // END deleting a job from the database
 
