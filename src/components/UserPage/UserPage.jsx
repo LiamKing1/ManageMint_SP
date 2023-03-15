@@ -17,7 +17,7 @@ function UserPage() {
   };
 
   const advisorybButton = () => {
-    history.push('/safetyadvisory');
+    history.push('/safetyadv');
   };
 
   const viewOtButton = () => {

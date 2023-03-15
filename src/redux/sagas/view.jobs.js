@@ -14,6 +14,8 @@ function* fetchAllJobs() {
   }
 } // END getting jobs from database
 
+
+
 function* getADetail(action) {
   try {
     const id = action.payload
@@ -27,21 +29,6 @@ function* getADetail(action) {
   }
 } // END getting jobs from database
 
-// Getting jobs from database
-function* accessLvlDetails() {
-  try {
-    const config = {
-      headers: { 'Content-Type': 'application/json' },
-      withCredentials: true,
-    };
-    const response = yield axios.get('/api/accesslvl', config);
-    yield put({ type: 'ACCESS_LVL', payload: response.data });
-  } catch (error) {
-    console.log('Access LVL get request failed', error);
-  }
-}
-
-// END getting jobs from database
 
 
 // Creating a new job that saves in the database
@@ -63,7 +50,6 @@ function* createNewJob(action) {
 // Editing individual job in database
 function* editJob(action) {
   try {
-
     console.log('CHecking my action payload from my axios request', action.payload);
     const id = action.payload.id;
     const response = yield axios.put(`/api/viewjobs/${id}`, action.payload);
@@ -100,7 +86,6 @@ function* jobsSaga() {
   yield takeEvery('CREATE_NEW_JOB', createNewJob);
   yield takeEvery('EDIT_A_JOB', editJob);
   yield takeEvery('DELETE_A_JOB', deleteJob);
-  yield takeEvery('CHECK_ACCESS_LVL', accessLvlDetails);
 }
 
 export default jobsSaga;

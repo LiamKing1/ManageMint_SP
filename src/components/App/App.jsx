@@ -26,7 +26,9 @@ import DeleteJob from '../DeleteJob/DeleteJobPage';
 import EditJob from '../EditJob/EditJobPage';
 import DetailsPage from '../JobDetails/jobdetails';
 import DeleteConfirmation from '../DeleteJob/DeleteConfirm';
-import EditSuccess from '../EditJob/EditSuccess'
+import EditSuccess from '../EditJob/EditSuccess';
+import SafetyAdvisory from '../CreateSafetyAd/CreateSafetyAd';
+import OverTimeReview from '../OTSubmit/OTSubmit';
 
 import './App.css';
 
@@ -149,6 +151,15 @@ function App() {
           <ProtectedRoute exact path="/jobdetails/:id">
           <DetailsPage />
           </ProtectedRoute>
+
+          <ProtectedRoute exact path="/safetyadv">
+          <SafetyAdvisory />
+          </ProtectedRoute>
+
+          <ProtectedRoute exact path="/overtime">
+          <OverTimeReview />
+          </ProtectedRoute>
+          
           
           {/* STRETCH GOALS BELOW */}
           {/* <Route exact path="/safetyadvisory">

@@ -8,7 +8,6 @@ function ViewJobsPage() {
     const dispatch = useDispatch();
     const jobs = useSelector((store) => store.viewJobsReducer);
     const user = useSelector((store) => store.user);
-
     const history = useHistory();
 
 

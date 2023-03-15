@@ -122,8 +122,9 @@ input {
 }
 
 .container {
+  object-position: center;
   font-family:Impact, 'Arial Narrow Bold', sans-serif;
-  text-align: center;
+  /* text-align: center; */
   margin-left: 350px;
   margin-right: 350px;
   margin-top: 15px;

@@ -6,8 +6,6 @@ function EditJob() {
 
     const history = useHistory();
     const user = useSelector((store) => store.user);
-    const job = useSelector((store) => store.viewJobsReducer);
-    const edits = useSelector((store) => store.editJobReducer);
     const dispatch = useDispatch();
     const { id } = useParams();
 
@@ -30,15 +28,6 @@ function EditJob() {
         window.location.reload(true);
     };
 
-    // const handleSubmit = (event) => {
-    //     event.preventDefault();
-    //     dispatch({
-    //         type: 'EDIT_A_JOB',
-    //         payload: edits
-    //     });
-    //     history.push('/editsuccessful');
-    // }
-
     const handleEdit = () => {
         dispatch({
             type: 'EDIT_A_JOB',
@@ -55,11 +44,8 @@ function EditJob() {
                 supervisor: supervisor,
                 notes: notes,
                 id: id
-                // user_id: userId,
-                // is_complete: status
             }
         });
-        console.log('In HandleEdit', jobName);
         pushComplete();
     };
 

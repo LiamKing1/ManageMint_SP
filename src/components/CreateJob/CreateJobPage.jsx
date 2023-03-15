@@ -22,7 +22,6 @@ function CreateJobPage() {
     const [newLaborer, setNewLaborer] = useState('');
     const [newSupervisor, setNewSupervisor] = useState('');
     const [newNotes, setNewNotes] = useState('');
-    // const [status, setStatus] = useState('');
 
 
 
@@ -52,7 +51,6 @@ function CreateJobPage() {
                 laborer: newLaborer,
                 supervisor: newSupervisor,
                 notes: newNotes
-                // is_complete: status
             }
         });
         history.push('/jobsubmitted');
@@ -106,19 +104,19 @@ function CreateJobPage() {
                     <input id="con-number" type="tel" value={newContactNumber} onChange={(event) => { setNewContactNumber(event.target.value) }} />
                     <br></br>
                     <label htmlFor="sup-name"> Supervisor Name: </label>
-                    {/* <input id="sup-name" type="text" value={newSupervisor} onChange={(event) => { setNewSupervisor(event.target.value) }} /> */}
-                    <select>
+                    <input id="sup-name" type="text" value={newSupervisor} onChange={(event) => { setNewSupervisor(event.target.value) }} />
+                    {/* <select>
                         <option id="sup-name" > Select Supervisor </option>
                         <option id="sup-name" value={newSupervisor} onChange={(event) => { setNewSupervisor(event.target.value) }}> Lonny Levi </option>
                         <option id="sup-name" value={newSupervisor} onChange={(event) => { setNewSupervisor(event.target.value) }}> Shorty Larz </option>
                         <option id="sup-name" value={newSupervisor} onChange={(event) => { setNewSupervisor(event.target.value) }}> Deputy Dan </option>
                         <option id="sup-name" value={newSupervisor} onChange={(event) => { setNewSupervisor(event.target.value) }}> Cory Shortwing </option>
-                    </select>
+                    </select> */}
                     <br></br>
                     <br></br>
                     <label htmlFor="laborer"> Laborer </label>
-                    {/* <input id="laborer" type="text" value={newLaborer} onChange={(event) => { setNewLaborer(event.target.value) }} /> */}
-                    <fieldset>
+                    <input id="laborer" type="text" value={newLaborer} onChange={(event) => { setNewLaborer(event.target.value) }} />
+                    {/* <fieldset>
                         <legend htmlFor="lab-name"> Laborers For This Job: </legend>
                         <input id="lab-name" type="checkbox" value={newLaborer} onChange={(event) => { setNewLaborer(event.target.value) }} /> Mo Isla <br></br>
                         <input id="lab-name" type="checkbox" value={newLaborer} onChange={(event) => { setNewLaborer(event.target.value) }} /> Martin Jewel <br></br>
@@ -127,7 +125,7 @@ function CreateJobPage() {
                         <input id="lab-name" type="checkbox" value={newLaborer} onChange={(event) => { setNewLaborer(event.target.value) }} /> Tony Anz <br></br>
                         <input id="lab-name" type="checkbox" value={newLaborer} onChange={(event) => { setNewLaborer(event.target.value) }} /> Billy Gene <br></br>
                         <input id="lab-name" type="checkbox" value={newLaborer} onChange={(event) => { setNewLaborer(event.target.value) }} /> Tory Blaine <br></br>
-                    </fieldset>
+                    </fieldset> */}
                     <br></br>
                     {/* <label htmlFor="job-notes"> Job Notes: </label> */}
                     {/* <input value={createJob} onChange={(event) => dispatch({ type: 'JOB_NOTES', payload: event.target.value })} placeholder='Job Notes' /> */}
