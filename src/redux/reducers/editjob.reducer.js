@@ -2,7 +2,7 @@
 const editJobReducer = (state = {}, action) => {
     switch (action.type) {
       case 'EDIT_JOB':
-        return {...state, [action.payload.property]: action.payload.value};
+        return action.payload;
       default:
         return state;
     }

@@ -13,7 +13,7 @@ function SubmitPage() {
         <div>
             <div className="back-btns">
                 <h1> Congratulations, job has been created  </h1>
-                <button text="submit" className="view_jobs" onClick={() => viewJobs()}> View Jobs </button>
+                <button text="submit" className="buttons" onClick={() => viewJobs()}> View Jobs </button>
             </div>
         </div>
     )

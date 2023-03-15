@@ -51,6 +51,7 @@ router.post('/', (req, res) => {
     newJobInput.laborer,
     newJobInput.supervisor,
     newJobInput.notes
+    // newJobInput.is_complete
   ])
     .then((result) => {
       res.sendStatus(201)
@@ -64,13 +65,15 @@ router.post('/', (req, res) => {
 
 router.put('/:id', (req, res) => {
   // PUT route code here
-  const newJobId = req.params.id;
+  const newJobId = req.body;
+  console.log('CHECKING BODY FROM PUT REQUEST', req.body);
   const queryText = `
  UPDATE "Job"
- SET "jobname"=$1, "jobnum"=$2, "jobtype"=$3, "start_date"=$4, "start_time"=$5, "duration"=$6, "contactnum"=$7, "contactname"=$8, "laborer"=$9, "supervisor"=$10, "notes"=$11
- WHERE "id"=$12;`;
+ SET "user_id"=$1, "jobname"=$2, "jobnum"=$3, "jobtype"=$4, "start_date"=$5, "start_time"=$6, "duration"=$7, "contactnum"=$8, "contactname"=$9, "laborer"=$10, "supervisor"=$11, "notes"=$12
+ WHERE "id"=$13;`;
+//  "is_complete"=$13
   pool.query(queryText, [
-    newJobId.user_id,
+    req.user.id,
     newJobId.jobname,
     newJobId.jobnum,
     newJobId.jobtype,
@@ -81,7 +84,9 @@ router.put('/:id', (req, res) => {
     newJobId.contactname,
     newJobId.laborer,
     newJobId.supervisor,
-    newJobId.notes
+    newJobId.notes,
+    req.params.id
+    // newJobId.is_complete
   ])
     .then(() => {
       console.log('in my PUT router');

@@ -65,7 +65,7 @@ function ViewJobsPage() {
             <div className="prev-sect">
                 <h1 className="table"> Previous Jobs </h1>
                 {/* <h3> <DetailsPage complete={jobCompleteButton} /> </h3> */}
-                <h3> STRETCH GOAL </h3>
+                {/* <h3> STRETCH GOAL </h3> */}
             </div>
 
             <div className="back-btns">

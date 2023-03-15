@@ -9,12 +9,16 @@ function AboutPage() {
   return (
     <div className="container">
       <div>
-        <p>
-          The place where managing crews, contracts and another 'C' word that
-          would make a complete and catchy statement, are all managed with ease.
+        <p className="give-space">
+          Hi, my name is Liam King and this is my Prime Digital Academy solo project 2023.
+          This project was inspired by my previous field of work as a general laborer. With running
+          into several very avoidable issues caused by our main means of communication, i decided
+          to create an application that would allow communication to be more direct and less cluttered,
+          thus leading to a more seamless flow of communication giving everyone the information they need
+          and nothing they don't.
         </p>
 
-        <p>
+        {/* <p>
           An application designed with effective communication of crews in mind. Making
           ManageMint an easy on-stop-shop. As we're growing into the world's leading providers
           of staffing services, we're always striving to improve our products and how our clients and
@@ -31,7 +35,7 @@ function AboutPage() {
           information about job scopes that will prove to better prepare them for the workload ahead
           and allowing them to also keep track of their hard earned labor hours for pension credits
           and proper payouts on checkstubs.
-        </p>
+        </p> */}
       </div>
     </div>
   );

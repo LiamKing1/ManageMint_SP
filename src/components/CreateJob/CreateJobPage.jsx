@@ -22,6 +22,7 @@ function CreateJobPage() {
     const [newLaborer, setNewLaborer] = useState('');
     const [newSupervisor, setNewSupervisor] = useState('');
     const [newNotes, setNewNotes] = useState('');
+    // const [status, setStatus] = useState('');
 
 
 
@@ -51,6 +52,7 @@ function CreateJobPage() {
                 laborer: newLaborer,
                 supervisor: newSupervisor,
                 notes: newNotes
+                // is_complete: status
             }
         });
         history.push('/jobsubmitted');
@@ -67,9 +69,9 @@ function CreateJobPage() {
 
             <div className="container">
                 <form onSubmit={handleCreateJob}>
-                    <label htmlFor="user-id"> User Id: </label>
+                    {/* <label htmlFor="user-id"> User Id: </label>
                     <input id="user-id" type="number" value={userId} onChange={(event) => { newUserId(event.target.value) }} />
-                    <br></br>
+                    <br></br> */}
                     {/* <input value={createJob} onChange={(event) => dispatch({ type: 'JOB_NAME', payload: event.target.value })} placeholder='Job Name' /> */}
                     <label htmlFor="job-name"> Job Name: </label>
                     {/* <input value={createJob} onChange={(event) => dispatch({ type: 'JOB_NAME', payload: event.target.value })} placeholder='Job Name' /> */}
@@ -103,34 +105,36 @@ function CreateJobPage() {
                     {/* <input value={createJob} onChange={(event) => dispatch({ type: 'CON_NUM', payload: event.target.value })} placeholder='Contact Number' /> */}
                     <input id="con-number" type="tel" value={newContactNumber} onChange={(event) => { setNewContactNumber(event.target.value) }} />
                     <br></br>
-                    <label htmlFor="lab-name"> Laborer Names: </label>
-                    {/* <input value={createJob} onChange={(event) => dispatch({ type: 'LAB_NAME', payload: event.target.value })} placeholder='Contact Number' /> */}
-                    {/* <select>
-                    <option value="employee-one" > Employee #1 </option>
-                    <option value="employee-two" > Employee #2 </option>
-                    <option value="employee-three"> Employee #3 </option>
-                    <option value="employee-four" > Employee #4 </option>
-                    <option value="employee-five" > Employee #5 </option>
-                    <option value="employee-six" > Employee #6 </option>
-                    <option value="employee-seven"> Employee #7 </option>
-                    <option value="employee-eight" > Employee #8 </option>
-                </select> */}
-                    <input id="lab-name" type="text" value={newLaborer} onChange={(event) => { setNewLaborer(event.target.value) }} />
-                    <br></br>
-                    <br></br>
                     <label htmlFor="sup-name"> Supervisor Name: </label>
-                    {/* <input value={createJob} onChange={(event) => dispatch({ type: 'SUP_NAME', payload: event.target.value })} placeholder='Contact Number' /> */}
-                    {/* <select>
-                    <option value="supervisor-one" > Supervisor #1 </option>
-                    <option value="supervisor-two" > Supervisor #2 </option>
-                    <option value="supervisor-three"> Supervisor #3 </option>
-                    <option value="supervisor-four" > Supervisor #4 </option>
-                </select> */}
-                    <input id="sup-name" type="text" value={newSupervisor} onChange={(event) => { setNewSupervisor(event.target.value) }} />
+                    {/* <input id="sup-name" type="text" value={newSupervisor} onChange={(event) => { setNewSupervisor(event.target.value) }} /> */}
+                    <select>
+                        <option id="sup-name" > Select Supervisor </option>
+                        <option id="sup-name" value={newSupervisor} onChange={(event) => { setNewSupervisor(event.target.value) }}> Lonny Levi </option>
+                        <option id="sup-name" value={newSupervisor} onChange={(event) => { setNewSupervisor(event.target.value) }}> Shorty Larz </option>
+                        <option id="sup-name" value={newSupervisor} onChange={(event) => { setNewSupervisor(event.target.value) }}> Deputy Dan </option>
+                        <option id="sup-name" value={newSupervisor} onChange={(event) => { setNewSupervisor(event.target.value) }}> Cory Shortwing </option>
+                    </select>
                     <br></br>
-                    <label htmlFor="job-notes"> Job Notes: </label>
+                    <br></br>
+                    <label htmlFor="laborer"> Laborer </label>
+                    {/* <input id="laborer" type="text" value={newLaborer} onChange={(event) => { setNewLaborer(event.target.value) }} /> */}
+                    <fieldset>
+                        <legend htmlFor="lab-name"> Laborers For This Job: </legend>
+                        <input id="lab-name" type="checkbox" value={newLaborer} onChange={(event) => { setNewLaborer(event.target.value) }} /> Mo Isla <br></br>
+                        <input id="lab-name" type="checkbox" value={newLaborer} onChange={(event) => { setNewLaborer(event.target.value) }} /> Martin Jewel <br></br>
+                        <input id="lab-name" type="checkbox" value={newLaborer} onChange={(event) => { setNewLaborer(event.target.value) }} /> Jordan Doy <br></br>
+                        <input id="lab-name" type="checkbox" value={newLaborer} onChange={(event) => { setNewLaborer(event.target.value) }} /> Micheal Mitten <br></br>
+                        <input id="lab-name" type="checkbox" value={newLaborer} onChange={(event) => { setNewLaborer(event.target.value) }} /> Tony Anz <br></br>
+                        <input id="lab-name" type="checkbox" value={newLaborer} onChange={(event) => { setNewLaborer(event.target.value) }} /> Billy Gene <br></br>
+                        <input id="lab-name" type="checkbox" value={newLaborer} onChange={(event) => { setNewLaborer(event.target.value) }} /> Tory Blaine <br></br>
+                    </fieldset>
+                    <br></br>
+                    {/* <label htmlFor="job-notes"> Job Notes: </label> */}
                     {/* <input value={createJob} onChange={(event) => dispatch({ type: 'JOB_NOTES', payload: event.target.value })} placeholder='Job Notes' /> */}
-                    <input id="job-notes" type="text" value={newNotes} onChange={(event) => { setNewNotes(event.target.value) }} />
+                    <input id="job-notes" type="textarea" placeholder="Write your job notes" value={newNotes} onChange={(event) => { setNewNotes(event.target.value) }} />
+                    {/* <br></br>
+                    <label htmlFor="is-complete"> Job Status Incomplete: </label>
+                    <input id="is-complete" type="radio" value={status} onChange={(event) => { setStatus(event.target.value) }} /> */}
                     <br></br>
                     <button text="submit" className="buttons" > Create Job </button>
                 </form>
