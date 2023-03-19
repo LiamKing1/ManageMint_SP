@@ -39,9 +39,12 @@ function DetailsPage() {
         window.location.reload(true);
     };
 
-    const jobCompleteButton = () => {
-
-    };
+    // const jobCompleteButton = () => {
+    //     let prevJob = [];
+    //     if (is_complete[0]) {
+    //         is_complete.push(prevJob);
+    //     }
+    // };
 
     return (
         <div>
@@ -54,18 +57,18 @@ function DetailsPage() {
 
             <section className="table">
 
-                <div className="jobs" key={job.id}>
+                <div className="container" key={job.id}>
                     <h2> Job Name: <i><u> {job.jobname} </u></i> </h2>
-                    <h4> Job Number: <i><u> {job.jobnum} </u></i> </h4>
-                    <h4> Job Type: <i><u> {job.jobtype} </u></i> </h4>
-                    <h4> Start Date: <i><u> {job.start_date} </u></i> </h4>
-                    <h4> Start Time: <i><u> {job.start_time} </u></i> </h4>
-                    <h4> Duration: <i><u> {job.duration} hours </u></i> </h4>
-                    <h4> Contact Name: <i><u> {job.contactname} </u></i> </h4>
-                    <h4> Contact Number: <i><u> {job.contactnum} </u></i> </h4>
-                    <h4> Laborer/s: <i><u> {job.laborer} </u></i> </h4>
-                    <h4> Supervisor: <i><u> {job.supervisor} </u></i> </h4>
-                    <h4> Job Notes: <i><u> {job.notes} </u></i> </h4>
+                    <h2> Job Number: <i><u> {job.jobnum} </u></i> </h2>
+                    <h2> Job Type: <i><u> {job.jobtype} </u></i> </h2>
+                    <h2> Start Date: <i><u> {job.start_date} </u></i> </h2>
+                    <h2> Start Time: <i><u> {job.start_time} </u></i> </h2>
+                    <h2> Duration: <i><u> {job.duration} hours </u></i> </h2>
+                    <h2> Contact Name: <i><u> {job.contactname} </u></i> </h2>
+                    <h2> Contact Number: <i><u> {job.contactnum} </u></i> </h2>
+                    <h2> Laborer/s: <i><u> {job.laborer} </u></i> </h2>
+                    <h2> Supervisor: <i><u> {job.supervisor} </u></i> </h2>
+                    <h2> Job Notes: <i><u> {job.notes} </u></i> </h2>
                     <br></br>
                     <button text="submit" className="buttons" onClick={() => handleEdit(job.id)}> Edit Job </button>
                     <button text="submit" className="buttons" onClick={() => handleDelete()}> Delete Job </button>

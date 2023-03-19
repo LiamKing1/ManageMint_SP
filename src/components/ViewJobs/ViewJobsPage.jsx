@@ -21,6 +21,13 @@ function ViewJobsPage() {
         // window.location.reload(true);
     };
 
+    // const jobCompleteButton = () => {
+    //     let prevJob = [];
+    //     if (is_complete[0]) {
+    //         is_complete.push(prevJob);
+    //     }
+    // };
+
 
     useEffect(() => {
         dispatch({
@@ -37,9 +44,9 @@ function ViewJobsPage() {
 
             <h1 className="title"> Current Job </h1>
 
-            <section className="table">
+            <section>
                 {jobs.map(job => (
-                    <div className="jobs" key={job.id}>
+                    <div className="container" key={job.id}>
                         <h2> Job Name: <i><u> {job.jobname} </u></i> </h2>
                         <h2> Job Number: <i><u> {job.jobnum} </u></i> </h2>
                         <h2> Contact Name: <i><u> {job.contactname} </u></i> </h2>
@@ -64,7 +71,9 @@ function ViewJobsPage() {
             <div className="prev-sect">
                 <h1 className="table"> Previous Jobs </h1>
                 {/* <h3> <DetailsPage complete={jobCompleteButton} /> </h3> */}
-                {/* <h3> STRETCH GOAL </h3> */}
+                {/* <h1> {jobs.forEach(element => {
+                    element.push(prevJob[0]);
+                })}; </h1> */}
             </div>
 
             <div className="back-btns">

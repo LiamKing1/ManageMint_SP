@@ -50,7 +50,6 @@ function* createNewJob(action) {
 // Editing individual job in database
 function* editJob(action) {
   try {
-    console.log('CHecking my action payload from my axios request', action.payload);
     const id = action.payload.id;
     const response = yield axios.put(`/api/viewjobs/${id}`, action.payload);
     yield put({

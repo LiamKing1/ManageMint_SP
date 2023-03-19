@@ -7,10 +7,11 @@ import { useSelector, useDispatch } from 'react-redux';
 
 function CreateJobPage() {
 
-    const createJob = useSelector((store) => store.jobCreationReducer);
     const user = useSelector((store) => store.user);
+    const dispatch = useDispatch();
+    const history = useHistory();
+    // const laborers = useSelector((store) => store.laborerReducer);
 
-    const [userId, newUserId] = useState('');
     const [newJobName, setNewJobName] = useState('');
     const [newJobNumber, setNewJobNumber] = useState('');
     const [newJobType, setNewJobType] = useState('');
@@ -24,10 +25,6 @@ function CreateJobPage() {
     const [newNotes, setNewNotes] = useState('');
 
 
-
-    const dispatch = useDispatch();
-    const history = useHistory();
-
     const backButton = () => {
         console.log('I want to make this go back to whatever page it just left');
         history.push('/user');
@@ -39,7 +36,6 @@ function CreateJobPage() {
         dispatch({
             type: 'CREATE_NEW_JOB',
             payload: {
-                user_id: Number(userId),
                 jobname: newJobName,
                 jobnum: Number(newJobNumber),
                 jobtype: newJobType,
@@ -55,6 +51,13 @@ function CreateJobPage() {
         });
         history.push('/jobsubmitted');
     };
+
+    // const handleLaborers = (event) => {
+    //     event.preventDefault();
+    //     dispatch({
+    //         type: 'lABORING_STAFF'
+    //     })
+    // };
 
     return (
         <div>
@@ -116,9 +119,24 @@ function CreateJobPage() {
                     <br></br>
                     <label htmlFor="laborer"> Laborer </label>
                     <input id="laborer" type="text" value={newLaborer} onChange={(event) => { setNewLaborer(event.target.value) }} />
+
+                    {/* <div>
+                        {laborers.map(laborer => (
+                            <div key={id}>
+                                <input /> {laborer[0]} <br></br>
+                                <h1> {laborer[1]} </h1>
+                            </div>
+                        ))}
+                    </div> */}
                     {/* <fieldset>
                         <legend htmlFor="lab-name"> Laborers For This Job: </legend>
-                        <input id="lab-name" type="checkbox" value={newLaborer} onChange={(event) => { setNewLaborer(event.target.value) }} /> Mo Isla <br></br>
+                        <select>
+                            <option onSelect={() => handleLaborers()}> {laborers[0]} </option>
+                            <option> {laborers[1]} </option>
+                            <option> {laborers[2]} </option>
+                        </select>
+
+                        <input id="lab-name" type="checkbox" value={newLaborer} onChange={(event) => { setNewLaborer(event.target.value) }} /> {laborers[0]} Mo Isla <br></br>
                         <input id="lab-name" type="checkbox" value={newLaborer} onChange={(event) => { setNewLaborer(event.target.value) }} /> Martin Jewel <br></br>
                         <input id="lab-name" type="checkbox" value={newLaborer} onChange={(event) => { setNewLaborer(event.target.value) }} /> Jordan Doy <br></br>
                         <input id="lab-name" type="checkbox" value={newLaborer} onChange={(event) => { setNewLaborer(event.target.value) }} /> Micheal Mitten <br></br>

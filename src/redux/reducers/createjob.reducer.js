@@ -7,5 +7,5 @@ const jobCreationReducer = (state = [], action) => {
       return state;
   }
 };
-``
+
 export default jobCreationReducer;

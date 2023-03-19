@@ -2,7 +2,7 @@ html,
 body,
 #react-root {
   height: 100%;
-  background-color:darkgrey;
+  background-color: darkgrey;
 }
 
 body {
@@ -117,30 +117,31 @@ input {
 }
 
 .greeting {
-  font-family:'Courier New', Courier, monospace;
+  font-family: 'Courier New', Courier, monospace;
   text-align: center;
 }
+
 
 .container {
   object-position: center;
-  font-family:Impact, 'Arial Narrow Bold', sans-serif;
-  /* text-align: center; */
-  margin-left: 350px;
-  margin-right: 350px;
-  margin-top: 15px;
+  font-family: Impact, 'Arial Narrow Bold', sans-serif;
   text-align: center;
-  /* text-indent: 20px; */
+  margin-left: 300px;
+  margin-right: 300px;
+  margin-top: 15px;
   display: block;
   border-color: brown;
-  border-style:ridge;
+  border-style: ridge;
   border-radius: 50px;
   height: auto;
   width: auto;
-  background-color:oldlace;
+  position: relative;
+  background-color: oldlace;
 }
 
+
 .buttons {
-  font-family:'Courier New', Courier, monospace;
+  font-family: 'Courier New', Courier, monospace;
   text-align: center;
   margin: 15px;
   padding: 5px;
@@ -150,20 +151,20 @@ input {
   cursor: pointer;
 }
 
-div.jobs {
-  font-family:Impact, 'Arial Narrow Bold', sans-serif;
+/* div.jobs {
+  font-family: Impact, 'Arial Narrow Bold', sans-serif;
   margin-left: 425px;
   margin-right: 425px;
   margin-top: 15px;
   text-align: center;
   display: block;
   border-color: brown;
-  border-style:ridge;
+  border-style: ridge;
   border-radius: 50px;
   height: auto;
   width: auto;
   background-color: oldlace;
-}
+} */
 
 .create {
   text-align: center;
@@ -173,7 +174,7 @@ div.jobs {
   text-align: center;
   display: block;
   border-color: brown;
-  border-style:ridge;
+  border-style: ridge;
   border-radius: 50px;
   height: auto;
   width: auto;
@@ -219,7 +220,7 @@ input[type=textarea] {
 }
 
 select {
-  font-family:Impact, 'Arial Narrow Bold', sans-serif;
+  font-family: Impact, 'Arial Narrow Bold', sans-serif;
   text-align: center;
   width: 40%;
   padding: 16px 20px;

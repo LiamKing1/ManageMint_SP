@@ -5,6 +5,12 @@ import viewJobsReducer from './viewjobs.reducer';
 import jobCreationReducer from './createjob.reducer';
 import deleteJobReducer from './deletejob.reducer';
 import editJobReducer from './editjob.reducer';
+import laborerReducer from './staff.reducer';
+import viewSafetyAd from './viewadvisories.reducer';
+import editAdvisoryReducer from './editadvisory.reducer';
+import deleteAdvisoryReducer from './deleteAdvisory.reducer';
+import advisoryCreationReducer from './createAdvisory.reducer';
+
 
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
@@ -19,6 +25,11 @@ const rootReducer = combineReducers({
   jobCreationReducer,
   deleteJobReducer,
   editJobReducer,
+  laborerReducer,
+  viewSafetyAd,
+  editAdvisoryReducer,
+  deleteAdvisoryReducer,
+  advisoryCreationReducer,
 });
 
 export default rootReducer;

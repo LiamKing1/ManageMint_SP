@@ -8,13 +8,13 @@ import React from 'react';
 function InfoPage() {
   return (
     <div className="container">
-      <p>Info Page</p>
-      <p>
+      <h3> <u> Info Page </u> </h3>
+      <h2>
         The place where managing crews, contracts and another 'C' word that
         would make a complete and catchy statement, are all managed with ease.
-      </p>
+      </h2>
 
-      <p>
+      <h2>
         An application designed with effective communication of crews in mind. Making
         ManageMint an easy on-stop-shop. As we're growing into the world's leading providers
         of staffing services, we're always striving to improve our products and how our clients and
@@ -31,7 +31,7 @@ function InfoPage() {
         information about job scopes that will prove to better prepare them for the workload ahead
         and allowing them to also keep track of their hard earned labor hours for pension credits
         and proper payouts on checkstubs.
-      </p>
+      </h2>
     </div>
   );
 }

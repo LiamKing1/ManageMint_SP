@@ -8,6 +8,7 @@ function EditJob() {
     const user = useSelector((store) => store.user);
     const dispatch = useDispatch();
     const { id } = useParams();
+    // const job = useSelector((store) => store.viewJobsReducer);
 
     // const [userId, newUserId] = useState('');
     const [jobName, newJobName] = useState('');

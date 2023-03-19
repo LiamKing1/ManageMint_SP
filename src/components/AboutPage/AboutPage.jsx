@@ -9,14 +9,14 @@ function AboutPage() {
   return (
     <div className="container">
       <div>
-        <p className="give-space">
+        <h2 className="give-space">
           Hi, my name is Liam King and this is my Prime Digital Academy solo project 2023.
           This project was inspired by my previous field of work as a general laborer. With running
           into several very avoidable issues caused by our main means of communication, i decided
           to create an application that would allow communication to be more direct and less cluttered,
           thus leading to a more seamless flow of communication giving everyone the information they need
           and nothing they don't.
-        </p>
+        </h2>
 
         {/* <p>
           An application designed with effective communication of crews in mind. Making
