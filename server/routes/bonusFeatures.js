@@ -32,10 +32,10 @@ router.get('/:id', (req, res) => {
 
 router.post('/', (req, res) => {
   // POST route code here
-  const newSafetyAd = req.params.id;
-  console.log('CHECKING WHAT MY PARAMS READ', req.params.id);
+  const newSafetyAd = req.body;
+  console.log('CHECKING WHAT MY PARAMS READ', req.body);
   const queryText = `INSERT INTO "safetyAd" ("advisory")
- VALUES ('$1');`;
+ VALUES ($1);`;
   pool.query(queryText, [newSafetyAd.advisory])
     .then(() => {
       console.log('In my POST router');
