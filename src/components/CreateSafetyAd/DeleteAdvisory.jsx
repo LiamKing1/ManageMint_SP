@@ -8,7 +8,6 @@ function DeleteSafetyAd() {
     const dispatch = useDispatch();
     const user = useSelector((store) => store.user);
     const { id } = useParams();
-    // const { id } = props;
 
 
     const deleteEdit = () => {
@@ -17,7 +16,6 @@ function DeleteSafetyAd() {
             payload: id
         });
         history.push('/deleteconfirmation');
-        // window.location.reload(true);
     };
 
     const backHomeButton = () => {

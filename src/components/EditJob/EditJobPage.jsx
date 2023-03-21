@@ -19,7 +19,6 @@ function EditJob() {
     const [contactName, newContactName] = useState('');
     const [contactNumber, newContactNumber] = useState('');
     const [notes, newNotes] = useState('');
-    // const [status, setStatus] = useState('');
 
     const [today, setToday] = useState(new Date().toJSON().slice(0, 10));
 

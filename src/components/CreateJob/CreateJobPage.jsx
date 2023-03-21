@@ -1,9 +1,6 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-// import 'react-date-range/dist/styles.css';
-// import 'react-date-range/dist/theme/default.css';
-// import { DateRangePicker } from 'react-date-range';
 
 function CreateJobPage() {
 

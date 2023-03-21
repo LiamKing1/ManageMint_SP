@@ -19,7 +19,6 @@ function DeleteJob() {
         });
         console.log('aiucbsudhc jkdbciusjndc', jobs.id)
         history.push('/deleteconfirmation');
-        // window.location.reload(true);
     };
 
     const noGoBack = () => {

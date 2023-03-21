@@ -40,15 +40,7 @@ function DetailsPage() {
         history.push('/viewjobs');
         window.location.reload(true);
     };
-
-
-    // const jobCompleteButton = () => {
-    //     let prevJob = [];
-    //     if (is_complete[0]) {
-    //         is_complete.push(prevJob);
-    //     }
-    // };
-
+    
     return (
         <div>
             <div className="greeting" >

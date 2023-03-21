@@ -49,19 +49,6 @@ function JobAssignments() {
                 </select>
                 <br></br>
                 <br></br>
-                {/* <div>
-                        {laborers.map(laborer => (
-                            <div key={id}>
-                                <input /> {laborer[0]} <br></br>
-                                <h1> {laborer[1]} </h1>
-                            </div>
-                        ))}
-                    </div> */}
-                {/* <select multiple>
-                        <option onSelect={() => handleLaborers()}> {laborers[0]} </option>
-                        <option> {laborers[1]} </option>
-                        <option> {laborers[2]} </option>
-                    </select> */}
                 <fieldset>
                     <legend htmlFor="lab-name"> Laborers Assignment: </legend>
                     <input id="lab-name" type="checkbox" /> {laborers[0]} Mo Isla <br></br>
