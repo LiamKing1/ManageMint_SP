@@ -2,37 +2,23 @@ import React, { useEffect, useState } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 
-function SafetyAdvisory(props) {
+function SafetyAdvisory() {
 
     const history = useHistory();
     const dispatch = useDispatch();
     const Advisories = useSelector((store) => store.viewSafetyAd);
     const user = useSelector((store) => store.user);
-    const { id, adv } = props;
     const [newAdvisory, setNewAdvisory] = useState('');
 
     useEffect(() => {
         dispatch({
             type: 'FETCH_ADVISORIES',
         });
-        
+
         dispatch({
             type: 'GET_AD_DETAIL',
         });
-
-        // const timer = setTimeout(() => {
-        //     // Call a function to delete the post after 30 days
-        //     deletePost(id);
-        // }, 30 * 24 * 60 * 60 * 1000); // 30 days in milliseconds
-
-        // return () => clearTimeout(timer);
-    }, [id]);
-
-
-    // function deletePost(id) {
-    //     // Call an API or perform other logic to delete the post
-    //     console.log(`Deleting post ${id}`);
-    // }
+    }, []);
 
 
     const handleCreateAdvisory = (event) => {
@@ -56,6 +42,11 @@ function SafetyAdvisory(props) {
         window.location.reload(true);
     };
 
+    const goToDelete = (id) => {
+        history.push(`/deleteAd/${id}`);
+        window.location.reload(true);
+    };
+
     return (
         <div>
             <div className="greeting" >
@@ -68,7 +59,7 @@ function SafetyAdvisory(props) {
                     <label htmlFor="advisory"> <h2> NEW ADVISORY </h2> </label>
                     <input id="advisory" type="text" value={newAdvisory} onChange={(event) => { setNewAdvisory(event.target.value) }} />
                     <br></br>
-                    <button text="submit" className="buttons" > Create Advisory </button>
+                    <button text="submit" className="buttons" > Create & Send Out Advisory </button>
                 </form>
             </div>
 
@@ -79,11 +70,7 @@ function SafetyAdvisory(props) {
                             <i> {Ads.advisory} </i>
                         </h2>
                         <button text="submit" className="buttons" onClick={() => goToEdit(Ads.id)}> Edit Advisory </button>
-                        <h3>
-                            {/* {adv} */}
-                        </h3>
-                        {/* <button text="submit" className="buttons" onClick={() => goToDelete()}> Delete Advisory </button> */}
-
+                        <button text="submit" className="buttons" onClick={() => goToDelete(Ads.id)}> Delete Advisory </button>
                     </div>
                 ))}
             </section>

@@ -6,11 +6,8 @@ function EditSafetyAd() {
 
     const history = useHistory();
     const dispatch = useDispatch();
-
     const user = useSelector((store) => store.user);
-    const editAdv = useSelector((store) => store.editAdvisoryReducer);
     const [newAdvisory, setNewAdvisory] = useState('');
-    // const { Adv } = props;
     const { id } = useParams();
 
     const handleEdit = () => {
@@ -21,6 +18,7 @@ function EditSafetyAd() {
                 id: id
             }
         });
+        history.push(`/safetyadv`);
         window.location.reload(true);
     };
 

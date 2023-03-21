@@ -87,8 +87,10 @@ router.put('/:id', (req, res) => {
 
 router.delete('/:id', (req, res) => {
   // DELETE route code here
-  const queryText = `DELETE FROM "Job" WHERE "id" = ${req.params.id};`;
-  pool.query(queryText)
+  const deleteJobById = req.params.id;
+  console.log('skalhfjnafladnlknfdl', req.params.id)
+  const queryText = `DELETE FROM "Job" WHERE "id" = $1;`;
+  pool.query(queryText, [deleteJobById])
     .then(() => {
       res.sendStatus(201);
     }).catch((error) => {

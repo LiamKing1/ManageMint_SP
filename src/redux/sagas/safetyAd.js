@@ -66,7 +66,7 @@ function* editAdvisory(action) {
 // Deleting a Advisory from the database
 function* deleteAdvisory(action) {
   try {
-    const id = action.payload.id;
+    const id = action.payload;
     const response = yield axios.delete(`/api/safetyAd/${id}`);
     yield put({
       type: 'DELETE_ADVISORY',

@@ -139,7 +139,7 @@ function App() {
             <SubmitPage />
           </ProtectedRoute>
 
-          <ProtectedRoute exact path="/deletejob">
+          <ProtectedRoute exact path="/deletejob/:id">
             <DeleteJob />
           </ProtectedRoute>
 
@@ -175,16 +175,7 @@ function App() {
           <JobAssignments />
           </ProtectedRoute>
           
-          {/* STRETCH GOALS BELOW */}
-          {/* <Route exact path="/safetyadvisory">
-            <SafetyAdvisory />
-          </Route>
-
-          <Route exact path="/overtime">
-            <ViewOt />
-          </Route> */}
-
-          {/* If none of the other routes matched, we will show a 404. */}
+          {/* If none of the other routes matched, a 404 message will be displayed. */}
           <Route>
             <h1>404</h1>
           </Route>

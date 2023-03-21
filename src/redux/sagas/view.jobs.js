@@ -67,7 +67,9 @@ function* editJob(action) {
 function* deleteJob(action) {
   try {
     const id = action.payload;
+    console.log('WHAT THE HECK IS GOING ON HER', action.payload);
     const response = yield axios.delete(`/api/viewjobs/${id}`);
+    console.log('WHAT THE HECK IS GOING ON HER', id);
     yield put({
       type: 'DELETE_JOB',
       payload: response.data

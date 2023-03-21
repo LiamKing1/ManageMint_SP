@@ -8,12 +8,13 @@ function DeleteSafetyAd() {
     const dispatch = useDispatch();
     const user = useSelector((store) => store.user);
     const { id } = useParams();
-    const deleteAd = useSelector((store) => store.deleteAdvisoryReducer);
+    // const { id } = props;
+
 
     const deleteEdit = () => {
         dispatch({
             type: 'DELETE_AN_ADVISORY',
-            payload: deleteAd.id
+            payload: id
         });
         history.push('/deleteconfirmation');
         // window.location.reload(true);
@@ -37,7 +38,7 @@ function DeleteSafetyAd() {
             </div>
             <div className="container">
                 <h1> Are you sure you want to DELETE this Advisory PERMINANTLY? </h1>
-                <button text="submit" className="buttons" onClick={() => deleteEdit()}> Delete Edit </button>
+                <button text="submit" className="buttons" onClick={() => deleteEdit()}> Delete Advisory </button>
             </div>
             <div className="back-btns">
                 <button text="submit" className="buttons" onClick={() => backHomeButton()}> Back to Home Page </button>

@@ -7,14 +7,17 @@ function DeleteJob() {
 
     const history = useHistory();
     const user = useSelector((store) => store.user);
-    const job = useSelector((store) => store.viewJobsReducer);
+    const deleteJobById = useSelector((store) => store.deleteJobReducer);
+    const jobs = useSelector((store) => store.viewJobsReducer);
     const dispatch = useDispatch();
+    const {id} = useParams;
 
     const yesDelete = () => {
         dispatch({
             type: 'DELETE_A_JOB',
-            payload: job.id
+            payload: jobs.id,
         });
+        console.log('aiucbsudhc jkdbciusjndc', jobs.id)
         history.push('/deleteconfirmation');
         // window.location.reload(true);
     };

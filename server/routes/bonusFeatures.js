@@ -69,16 +69,18 @@ router.put('/:id', (req, res) => {
 
 router.delete('/:id', (req, res) => {
   // DELETE route code here
-  const deleteAdvisoryId = req.body;
-  console.log('InAd Delete Router request', req.body);
-  const queryText = `DELETE FROM "safetyAd" WHERE "id" = ${deleteAdvisoryId};`;
+  const deleteAdvisoryId = req.params.id;
+  console.log('InAd Delete Router request', req.params.id);
+  const queryText = `
+  DELETE FROM "safetyAd"
+  WHERE "id" = $1;`;
   // `DELETE FROM "safetyAd" WHERE date < DATE_SUB(now(), INTERVAL 30 DAY);`
-  pool.query(queryText)
+  pool.query(queryText, [deleteAdvisoryId])
     .then(() => {
       console.log('in my PUT router');
       res.sendStatus(200);
     }).catch((error) => {
-      console.log('There is an error in your DELETE router request', error);
+      console.log('There is an error in your ADDDDDD DELETE router request', error);
     })
 });
 

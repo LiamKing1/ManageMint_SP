@@ -1,5 +1,5 @@
 
-const deleteAdvisoryReducer = (state = [], action) => {
+const deleteAdvisoryReducer = (state = {}, action) => {
   switch (action.type) {
     case 'DELETE_ADVISORY':
       return action.payload;

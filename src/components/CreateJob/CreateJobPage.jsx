@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
+// import 'react-date-range/dist/styles.css';
+// import 'react-date-range/dist/theme/default.css';
+// import { DateRangePicker } from 'react-date-range';
 
 function CreateJobPage() {
 
@@ -8,6 +11,8 @@ function CreateJobPage() {
     const dispatch = useDispatch();
     const history = useHistory();
 
+
+    const [newUser, setNewUser] = useState('');
     const [newJobName, setNewJobName] = useState('');
     const [newJobNumber, setNewJobNumber] = useState('');
     const [newJobType, setNewJobType] = useState('');
@@ -32,6 +37,7 @@ function CreateJobPage() {
         dispatch({
             type: 'CREATE_NEW_JOB',
             payload: {
+                user_id: newUser,
                 jobname: newJobName,
                 jobnum: Number(newJobNumber),
                 jobtype: newJobType,
@@ -57,7 +63,10 @@ function CreateJobPage() {
 
             <div className="container">
                 <form onSubmit={handleCreateJob}>
-                  <label htmlFor="job-name"> Job Name: </label>
+                    <label htmlFor="job-name"> {user.username}'s User Id': </label>
+                    <input id="job-name" type="text" value={newUser} onChange={(event) => { setNewUser(event.target.value) }} />
+                    <br></br>
+                    <label htmlFor="job-name"> Job Name: </label>
                     <input id="job-name" type="text" value={newJobName} onChange={(event) => { setNewJobName(event.target.value) }} />
                     <br></br>
                     <label htmlFor="job-number"> Job Number: </label>
