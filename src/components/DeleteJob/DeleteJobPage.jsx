@@ -31,7 +31,7 @@ function DeleteJob() {
                 <p>Your ID is: {user.id}</p>
             </div>
 
-            <h1 className="title"> Are You sure You want to delete this job? </h1>
+            <h1 className="container"> Are You sure You want to delete this job? </h1>
 
             <div className="back-btns">
                 <button text="submit" className="buttons" onClick={() => yesDelete()}> Yes Delete </button>

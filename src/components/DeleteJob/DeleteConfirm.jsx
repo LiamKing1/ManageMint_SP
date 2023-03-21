@@ -16,6 +16,11 @@ function DeleteConfirmation() {
         window.location.reload(true);
     };
 
+    const backHomeButton = () => {
+        history.push('/user');
+        window.location.reload(true);
+    };
+
     return (
         <div>
             <div className="greeting" >
@@ -23,9 +28,10 @@ function DeleteConfirmation() {
                 <p>Your ID is: {user.id}</p>
             </div>
 
-            <h1 className="container"> Job DELETED </h1>
+            <h1 className="container"> Delete Request Successful </h1>
 
             <div className="back-btns">
+                <button text="submit" className="buttons" onClick={() => backHomeButton()}> Home Page </button>
                 <button text="submit" className="buttons" onClick={() => createNew()}> Create New Job </button>
                 <button text="submit" className="buttons" onClick={() => viewJobs()}> View Jobs </button>
             </div>

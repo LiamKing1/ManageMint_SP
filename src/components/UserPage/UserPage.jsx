@@ -1,5 +1,4 @@
 import React from 'react';
-import LogOutButton from '../LogOutButton/LogOutButton';
 import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
@@ -10,18 +9,22 @@ function UserPage() {
 
   const viewJobsButton = () => {
     history.push('/viewjobs');
+    window.location.reload(true);
   };
 
   const createJobButton = () => {
     history.push('/createjob');
+    window.location.reload(true);
   };
 
   const advisorybButton = () => {
     history.push('/safetyadv');
+    window.location.reload(true);
   };
 
   const viewOtButton = () => {
     history.push('/overtime');
+    window.location.reload(true);
   };
 
   return (
@@ -53,7 +56,6 @@ function UserPage() {
         <button text="submit" className="buttons" onClick={() => viewOtButton()}> View OT Requests </button>
       </div>
 
-      {/* <LogOutButton className="btn" /> */}
     </div>
   );
 }

@@ -21,12 +21,12 @@ function DetailsPage() {
         history.push(`/editjob/${id}`);
     };
 
-    const handleDelete = () => {
+    const handleDelete = (id) => {
         dispatch({
             type: 'DELETE_JOB',
-            payload: job.id
+            payload: id
         })
-        history.push(`/deletejob/:id`);
+        history.push(`/deletejob`);
     };
 
     const backHomeButton = () => {
@@ -36,6 +36,11 @@ function DetailsPage() {
 
     const backButton = () => {
         history.push('/viewjobs');
+        window.location.reload(true);
+    };
+
+    const createAssignment = () => {
+        history.push("/assignjob/:id");
         window.location.reload(true);
     };
 
@@ -66,13 +71,14 @@ function DetailsPage() {
                     <h2> Duration: <i><u> {job.duration} hours </u></i> </h2>
                     <h2> Contact Name: <i><u> {job.contactname} </u></i> </h2>
                     <h2> Contact Number: <i><u> {job.contactnum} </u></i> </h2>
-                    <h2> Laborer/s: <i><u> {job.laborer} </u></i> </h2>
-                    <h2> Supervisor: <i><u> {job.supervisor} </u></i> </h2>
+                    {/* <h2> Laborer/s: <i><u> {job.laborer} </u></i> </h2> */}
+                    {/* <h2> Supervisor: <i><u> {job.supervisor} </u></i> </h2> */}
                     <h2> Job Notes: <i><u> {job.notes} </u></i> </h2>
                     <br></br>
                     <button text="submit" className="buttons" onClick={() => handleEdit(job.id)}> Edit Job </button>
                     <button text="submit" className="buttons" onClick={() => handleDelete()}> Delete Job </button>
                     <button text="submit" className="buttons" onClick={() => jobCompleteButton()}> Job Complete </button>
+                    <button text="submit" className="buttons" onClick={() => createAssignment()}> Create Job Assignment </button>
                 </div>
 
             </section>

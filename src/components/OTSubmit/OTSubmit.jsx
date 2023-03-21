@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from 'react-redux';
 function OverTimeReview() {
 
     const history = useHistory();
+    const user = useSelector((store) => store.user);
 
     const backHomeButton = () => {
         history.push('/user');
@@ -18,6 +19,10 @@ function OverTimeReview() {
 
     return (
         <div>
+            <div className="greeting" >
+                <h2>User, {user.username}!</h2>
+                <p>Your ID is: {user.id}</p>
+            </div>
             <div className="container">
                 <h1> This is where laborers who submitted for OT will show! </h1>
                 <br></br>

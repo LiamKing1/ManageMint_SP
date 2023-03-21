@@ -7,8 +7,9 @@ import React from 'react';
 
 function AboutPage() {
   return (
-    <div className="container">
-      <div>
+    <div>
+      <h1 className="title"> <u> About Page </u> </h1>
+      <div className="container">
         <h2 className="give-space">
           Hi, my name is Liam King and this is my Prime Digital Academy solo project 2023.
           This project was inspired by my previous field of work as a general laborer. With running

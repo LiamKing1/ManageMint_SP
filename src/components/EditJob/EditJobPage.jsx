@@ -61,7 +61,7 @@ function EditJob() {
                 <p>Your ID is: {user.id}</p>
             </div>
 
-            <h1 className="title"> Edit Job </h1>
+            <h1 className="title"> <u> Edit Job </u> </h1>
             <section>
 
                 <form className="container" onSubmit={handleEdit}>

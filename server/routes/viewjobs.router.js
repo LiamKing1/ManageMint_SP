@@ -32,8 +32,8 @@ router.get('/:id', (req, res) => {
 router.post('/', (req, res) => {
   // POST route code here
   const newJobInput = req.body;
-  const queryText = `INSERT INTO "Job" ("user_id", "jobname", "jobnum", "jobtype", "start_date", "start_time", "duration", "contactnum", "contactname", "laborer", "supervisor", "notes")
- VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12);`;
+  const queryText = `INSERT INTO "Job" ("user_id", "jobname", "jobnum", "jobtype", "start_date", "start_time", "duration", "contactnum", "contactname", "notes")
+ VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10);`;
   pool.query(queryText, [
     newJobInput.user_id,
     newJobInput.jobname,
@@ -44,8 +44,6 @@ router.post('/', (req, res) => {
     newJobInput.duration,
     newJobInput.contactnum,
     newJobInput.contactname,
-    newJobInput.laborer,
-    newJobInput.supervisor,
     newJobInput.notes
   ])
     .then((result) => {
@@ -63,9 +61,8 @@ router.put('/:id', (req, res) => {
   const newJobId = req.body;
   const queryText = `
  UPDATE "Job"
- SET "user_id"=$1, "jobname"=$2, "jobnum"=$3, "jobtype"=$4, "start_date"=$5, "start_time"=$6, "duration"=$7, "contactnum"=$8, "contactname"=$9, "laborer"=$10, "supervisor"=$11, "notes"=$12
- WHERE "id"=$13;`;
-//  "is_complete"=$13
+ SET "user_id"=$1, "jobname"=$2, "jobnum"=$3, "jobtype"=$4, "start_date"=$5, "start_time"=$6, "duration"=$7, "contactnum"=$8, "contactname"=$9, "notes"=$10
+ WHERE "id"=$11;`;
   pool.query(queryText, [
     req.user.id,
     newJobId.jobname,
@@ -76,11 +73,8 @@ router.put('/:id', (req, res) => {
     newJobId.duration,
     newJobId.contactnum,
     newJobId.contactname,
-    newJobId.laborer,
-    newJobId.supervisor,
     newJobId.notes,
     req.params.id
-    // newJobId.is_complete
   ])
     .then(() => {
       res.sendStatus(201);
@@ -93,7 +87,6 @@ router.put('/:id', (req, res) => {
 
 router.delete('/:id', (req, res) => {
   // DELETE route code here
-  // const deleteById = req.params.id;
   const queryText = `DELETE FROM "Job" WHERE "id" = ${req.params.id};`;
   pool.query(queryText)
     .then(() => {

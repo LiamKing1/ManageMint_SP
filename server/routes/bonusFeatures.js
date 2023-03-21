@@ -8,10 +8,9 @@ router.get('/', (req, res) => {
   const queryText = 'SELECT * FROM "safetyAd";';
   pool.query(queryText)
     .then((result) => {
-      console.log('In my GET router', result);
       res.send(result.rows);
     }).catch((error) => {
-      alert('There is an error in your GET router request', error)
+      console.log('There is an error in your BonusFeatures GET router request', error)
       res.sendStatus(500);
     })
 });
@@ -19,12 +18,13 @@ router.get('/', (req, res) => {
 router.get('/:id', (req, res) => {
   // GET route code here
   const id = req.params.id;
+  console.log('SELECT * FROM "safetyAd" WHERE "id" = $1', req.params.id);
   const queryText = 'SELECT * FROM "safetyAd" WHERE "id" = $1;';
   pool.query(queryText, [id])
     .then((result) => {
       res.send(result.rows[0]);
     }).catch((error) => {
-      console.log('There is an error in your GET router request', error)
+      console.log('There is an error in your BonusFeatures GET.id router request', error)
       res.sendStatus(500);
     })
 });
@@ -33,7 +33,6 @@ router.get('/:id', (req, res) => {
 router.post('/', (req, res) => {
   // POST route code here
   const newSafetyAd = req.body;
-  console.log('CHECKING WHAT MY PARAMS READ', req.body);
   const queryText = `INSERT INTO "safetyAd" ("advisory")
  VALUES ($1);`;
   pool.query(queryText, [newSafetyAd.advisory])
@@ -48,7 +47,7 @@ router.post('/', (req, res) => {
 
 router.put('/:id', (req, res) => {
   // PUT route code here
-  const newSafetyAlert = req.body;
+  const newSafetyAlert = req.body
   const queryText = `
  UPDATE "safetyAd"
  SET "advisory"=$1
@@ -70,14 +69,16 @@ router.put('/:id', (req, res) => {
 
 router.delete('/:id', (req, res) => {
   // DELETE route code here
-  const deleteAdvisoryId = req.params.id;
-  const queryText = `DELETE FROM "safetyAd" WHERE id = $1;`;
-  pool.query(queryText, [deleteAdvisoryId])
+  const deleteAdvisoryId = req.body;
+  console.log('InAd Delete Router request', req.body);
+  const queryText = `DELETE FROM "safetyAd" WHERE "id" = ${deleteAdvisoryId};`;
+  // `DELETE FROM "safetyAd" WHERE date < DATE_SUB(now(), INTERVAL 30 DAY);`
+  pool.query(queryText)
     .then(() => {
       console.log('in my PUT router');
       res.sendStatus(200);
     }).catch((error) => {
-      console.log('There is an error in your PUT router request', error);
+      console.log('There is an error in your DELETE router request', error);
     })
 });
 
